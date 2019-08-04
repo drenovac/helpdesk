@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>New function - creating demo system</h1>
+				  <p> This document details how to setup a training company for Powerforce..</p>
+              
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+
+					<h1>Overview</h1>
+				  <p>Your Powerforce system is setup according to your internal IT structure. Here we outline how to setup a parallel testing environment for internal use.</p>
+				  <p>The first item on the left shows a sample production system setup (your details will be different to this. This serves as an example only).<br>
+			      The point to note is that your 2 copies of Powerforce run out of 2 different directories (paths). One is p:\acs and the other is p:\acs-demo.</p>
+				  <p>&nbsp;</p>
+				  <p>To create a shortcut, ensure that your training directory (p:\acs-demo in this example) has been copied and exists before creating a shortcut as windows has a rather not-so-clever fix for shortcuts when the destination directory does not exist (it will create you the shortcut, but point the details to the production version, giving you the impression that you've actually setup the new shortcut, however, you actually have not (if confused, please refer to your IT support)).</p>
+				  <p>&nbsp;</p>
+				  <p>Overall, all that you need to ensure is that each of your shortcuts has the portions of the "Target:" and "Start in:" set different betwen the two shortcuts, whilst being exactly the same within each shortcut.</p>
+				  <p>&nbsp;</p>
+			  <img src="../2014/helpdesk/img/hd_60a.png" alt="shortcuts" height="605" width="757">			    
+              			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="index.html" class="sLocator">Home</a> > Helpdesk 
+<a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></strong></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="77%" valign="top"><p class="TutParagraph">I cannot remove the display of random schedules whilst working on the scheduling workbench.</p></td>
+<td width="23%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p>
+<p align="center" class="TutParagraph">&nbsp;</p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Introduction <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The customer complaint relates to display similar to the following:</p>
+<p><img src="images/hd_0030.png" style="width:100%; max-width:778px;" alt="workbench" /></p>
+<blockquote class="TutParagraph">What you're seeing here is the short code TOX1/1-1 (TOX1 1 of 1). Question is where is this coming from.</blockquote>
+<p>&nbsp;</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">In the investigation of this particular enquiry from the client, the site given as the problem was &quot;DANGAR&quot;, and the first thing that struck us whilst investigating the problem, was the following error message when the site was opened on the scheduling workbench.</p>
+<p class="TutParagraph"><img src="images/hd_0030a.png" width="207" height="150" alt="expired site" /> The message is telling you that the site should not be being rostered at if the services have expired (the call was taken on 04/05/12). So, to investigate where this is coming from, open the client contracts record, and on the Accounts tab:</p>
+<p class="TutParagraph"><img src="images/hd_0030b.png" style="width:100%; max-width:511px;" alt="client contract" /></p>
+<p class="TutParagraph">The thing to note here is the invalid set up.</p>
+<ul>
+  <li>The service is cancelled on the day prior to its commencement. <br />
+    So, this has to be corrected to either the site is active or its not.</li>
+  <li>The other note to take away is that, irrespective of the service cancelled date (to which the user is being warned, when they open the scheudling workbench), the &quot;Account Inactive&quot; is not set, and hence the account is still available for rostering.</li>
+</ul>
+<p class="TutParagraph">To remove the site from the list of rostering sites, check the Account Inactive box.</p>
+<p class="TutParagraph">&nbsp;</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Where is the display coming from / why?<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Whilst you're on the scheduling workbench, you can get to the setup of the short-code by following these steps:</p>
+<p class="TutParagraph"><img src="images/hd_0030c.png" width="145" height="94" alt="icons" /> Select the icon as indicated, which will give you a further menu something like the following: <img src="images/hd_0030d.png" style="width:100%; max-width:345px;" alt="menus" /> Select the (Maintain Work Scheduled) item as shown</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Looking at the screen, this is what you have configured for the site DANGAR</p>
+<ul>
+  <li>a shift with a short code of &quot;TOX1&quot; - serves to distinguish the scheduling workbench display when you have more than one shift defined.</li>
+  <li>The shift is for the time period 20.00 - 02.00, on every Thu, Fri &amp; Sat.</li>
+  <li>The shift requires 1 employee per shift</li>
+  <li>The shift schedule commences '15/03/2012' and is valid to '02/03/2014'. What this means is that the shift with a short code of TOX1 will continue to automatically appear on the scheudling workbench until 02/03/2014.
+    <ul>
+      <li>If you want to stop the display becuase the shift specification (dates and times) has changed, then change the 02/03/2014 to a date past. This has the effect of cancelling the shift.</li>
+      <li>Then define a new shift (do not delete this one, terminate it as per the above note) if the times have changed.</li>
+      <li>Otherwise, if you don't want a standard shift then don't create a new one once you've cancelled the current one.</li>
+</ul>
+</li>
+</ul>
+<p class="TutParagraph">&nbsp;</p>
+<p class="TutParagraph"><img src="images/hd_0030e.png" style="width:100%; max-width:682px;" alt="client work schedule" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

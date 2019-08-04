@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>Overview</h1>
+				  <p>GL Export error.</p>
+				  <p>Xref Data Missing. Please run reports and correct the required information. </p>
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+				
+                <h2>Exporting GL Journals to Accounting System</h2>
+                <p>&nbsp;</p>
+                <p><img src="../2013/helpdesk/img/hd_0055a.png" height="431" width="467"></p>
+                <hr>
+                
+                <div class="clear"></div>
+                <p>Raises the following sequence of error messages:</p>
+                <p><img src="../2013/helpdesk/img/hd_0055b.png" height="101" width="411"> <img src="../2013/helpdesk/img/hd_0055c.png" height="139" width="369"></p>
+                <p>&nbsp;</p>
+                <hr>
+                <h2>Find the Cause</h2>
+                <p><br>
+                We can we from the export that the export relates to a pay-run.</p>
+                <p>Open the payrun "1563",  through the payroll workbench and open the reports menus, as shown below:</p>
+                <p><img src="../2013/helpdesk/img/hd_0055g.png" height="221" width="445"></p>
+                <p>The resultant output will show the GL with the issue, as you can clearly see below, relating to employee id: "VG0824".</p>
+                <p><img src="../2013/helpdesk/img/hd_0055f.png" height="560" width="940"></p>
+                <hr>
+                <h2>Locate the cause</h2>
+                <p>Using the GL option / Code Interpreter, review the setup for the GL cross-reference between the Powerforce code and your external accounting system.</p>
+                <p>You can confirm that the combination has no external entry, and hence the failure.</p>
+                <p><img src="../2013/helpdesk/img/hd_0055h.png" height="331" width="566"></p>
+                <p>Now, source the cause of the GL number used. Check the employee pay class and then verify the classification code details for that pay class, which show:</p>
+                <p><img src="../2013/helpdesk/img/hd_0055i.png" height="221" width="607"></p>
+                <p>&nbsp;</p>
+                <p>If the GL-entry in the classification code is correct, go back to the GL and create a cross-reference to your external system, otherwise correct the GL entry in the above to point to a GL which has a cross-reference for the external system.</p>
+                <hr>
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>the issue</h1>
+				  <p>Regarding SA part public holidays:<br>
+</p>
+				  <p>This year they fall on:				    24/12/2013, &amp; 31/12/2013				    and apply from <strong><u>1900 to  0000</u></strong> on these dates only.</p>
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+                <h1>Overview</h1>
+                <p>The requirement is to pay Public Holiday loading on a non-Public Holiday (in this case on Xmas and New Year's Eve), between the hours of 19.00 - 00.00.</p>
+                <p>Shown below is the completed configuration - explanation details:</p>
+                <ol>
+                <li>01/12/13 represents the most current version of the classification code (pay class).<br>
+                </li>
+                <li>24/12/13 is the first date on which a specific award change has to <br>
+                25/12/13 is the next day following the award change, the changes to the award have to come back to the baseline (your original award details)<br>
+                31/12/13 is the second occurence where the award changes has to be made to pay PHOL rates for the required period<br>
+                01/01/14 is then the next occurence where the award returns to the baseline details
+                </li>
+                </ol>
+                <p><br>
+                The image shows the Award Rule on 01/07/13 &amp; 01/13/13 as "CSW".<br>
+                </p>
+                <hr>
+                <p>&nbsp;</p>
+                <p><img src="../2013/helpdesk/img/hd_0057a.png" alt="sa award" height="214" width="824"><br>
+                </p>
+                <p>The Award Rule for 24/12/13 &amp; 31/12/13 is shown as "CSWSAPHOL". The name can be anything you chose, our name is meant to reflect some relationship to its purpose.</p>
+                <p>This is the only value that needs to be modified on the classification codes for the 2 dates in question.</p>
+                <p><img src="../2013/helpdesk/img/hd_0057b.png" alt="sa award" height="170" width="776"></p>
+                <p>the 31/12/13 shows the same detail.</p>
+                <p><img src="../2013/helpdesk/img/hd_0057c.png" alt="sa award" height="139" width="775"></p>
+                <p>The Award Interpreter for the baseline award is shown below, and is quite basic. </p>
+                <p>The award appears to be a generic span loading (06.00 - 18.00 - 06.00), with shift loading applicable in the 18.00 - 06.00 period.<br>
+                </p>
+                <p><img src="../2013/helpdesk/img/hd_0057d.png" height="185" width="913"></p>
+                <hr>
+                <p>&nbsp;</p>
+                <p>The award change for the 24/12 and 31/12 dates, both of which are "Tuesday" is shown below, with the following detail:</p>
+                <p>The 06.00 - 18.00 span is changed to 06.00 - 19.00 <br>
+                The span of 19.00 - 23.59:59 is re-configured as Normal Hours + PHL (Public Holiday Loading)<br>
+                The 00.00 - 06.00 span on Wednesday is also showing Normal Hours + PHL (Public Holiday Loading).</p>
+                <p>It's important to understand how this works:<br>
+                This definition even though is shows Sunday - Saturday and Public Holiday only applies to the day of the week "Tuesday". Refer to the initial images above to note that this award Rule applies to these two dates only.</p>
+                <p>When a shift falls (starts) on the 24th or 31st, this award rule will be used to determine what to pay, and that's why there's a PHL entry in the Wednesday column. If a shift starting on the 24th or 31st runs into the next day, this definition will flow into how the Wednesday looks in this Award Rule. The system will not read a new award rule for Wednesday - it's award rule has been selected and set based on the shift start date.</p>
+                <p><img src="../2013/helpdesk/img/hd_0057e.png" alt="sa award" height="174" width="905"></p>
+                <p>The following couple of images demonstrate that the award is being calculated correctly, and importantly as the hours are noted as PHOL - the fee interpretere will also see the hours as Public Holiday and not normal overtime.</p>
+                <p><img src="../2013/helpdesk/img/hd_0057f.png" alt="sa award" height="148" width="281"></p>
+                <p>The costing tab demonstrates the hours breakup and shows the 4.5 PH (Public Holiday) earning code (not to be confused with the above PHL (link code)).</p>
+                <p><img src="../2013/helpdesk/img/hd_0057g.png" alt="sa award" height="95" width="506"></p>
+                <p>Another example of an earlier start shift as well as an earlier finish time.</p>
+                <p><img src="../2013/helpdesk/img/hd_0057h.png" alt="sa award" height="114" width="283"></p>
+                <p>&nbsp;</p>
+                <p><img src="../2013/helpdesk/img/hd_0057i.png" alt="sa award" height="65" width="508"></p>
+                <p>And, finally a shift which runs over into the next day demonstrating that the hours into Wednesday are correctly interpreted as PHOL.</p>
+                <p><img src="../2013/helpdesk/img/hd_0057j.png" alt="sa award" height="133" width="284"></p>
+                <p>with the corresponding costs tab</p>
+                <p><img src="../2013/helpdesk/img/hd_0057k.png" alt="sa award" height="109" width="513"></p>
+                <p>&nbsp;</p>
+                
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

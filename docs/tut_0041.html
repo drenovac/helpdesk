@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1 rowlast1">
+    	<div class="col-sm-7 col-sm-offset-1">
+					<h1>Overview</h1>
+					<p>We have found   that &ldquo;Holiday Leave Loading&rdquo; has been paying out automatically when an employee  is on leave.&nbsp; Please remove this automatic element in Power Force.</p>
+We  would like this process to stop being automatic and for this to be a manual  process as a majority of our employees are not entitled to the 17.5% holiday  leave loading.&nbsp;
+<hr>
+					<p><br />The parameters which control an employee's leave accruals and processing are found on the classification (pay class) code that the employee is on at the time of taking leave. As an example:</p>
+					<p>.<img src="../2013/helpdesk/img/leave_loading.png" width="575" height="606" alt="leave loading"></p>
+				  <p>&nbsp;</p>
+					<p>Here you have a classificaiton, which has Annual Leave accuring according to the Leave Code &quot;AL-PPT&quot;.<br>
+					</p>
+				  <p>When you then look at the details of the leave code itself, it has two entries which contribute to the classification (pay class) giving an employee the loading.</p>
+					<ol>
+					  <li>The Holiday Loading Pay Code indicates that this Leave Code pays as per the &quot;201&quot; Allowance code.</li>
+					  <li>The Leave Loading value is set at 17.50 - which overrides the value that may be held on the 201 Allowance code.</li>
+				  </ol>
+					<p>&nbsp;</p>
+					<p>The Allowance code &quot;201&quot; itself has a default setting of 17.50 as the rate of leave loading in case there was no entry on the Leave Code &quot;AL-PPT&quot;.</p>
+					<p>&nbsp;</p>
+					<p>To remove the loading you must remove the &quot;201&quot; entry from the Holiday Loading Pay Code.</p>
+					<p>If you have employees that are entitled to receive a leave loading, then create a seperate Annual Leave code, and a seperate classification code that links to that particular leave code.</p><hr>
+                    <p>A higher level control on the payment of leave is set at the employment type configuration. Leave accurals has to be confirmed as an entitlement on the employment type for the employee to accrue any hours.</p>
+                    <p><img src="../2013/helpdesk/img/hd0041a.png" width="728" height="492" alt="employment type"></p>
+	        </div>				
+			<div class="col-sm-3">				
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

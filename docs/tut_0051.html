@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				<h1>Overview</h1>
+				  <p>This is a quick writeup on an internal support tool, for in-house maintenance.</p>
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+                <h2>Problem</h2>
+                <p>Through whatever means a number of rosters have not correctly flagged with their correct invoice number. The problem is best demonstrated through the scheduling workbench's display: <img src="../2013/helpdesk/img/hd_0051.png" alt="invoice rosters" height="120" width="240">Had the data been correct, the system should have reported a valid invoice number.</p>
+                <p>Therefore we have to reset the necessary flags to enable the shifts to be re-invoiced.</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <hr>
+                <h2>Batch Change Utility</h2>
+                <p>The following image represents the in-house tool referred to in our introduction.</p>
+                <p><img src="../2013/helpdesk/img/hd_0051a.png" alt="roster timecard" height="261" width="533"></p>
+                <p>The few tricks are to NOT enter quotation marks around any value that you place in the 3rd box (where the '01/06/13' appears).<br>
+                So, in this instance enter the data as you see it above:</p>
+                <p>The end result that you are looking to execute is:</p>
+                <p>SELECT ROSTER_TIMECARD WITH ROSTER_DATE BETWEEN '01/06/13' AND '30/06/13'<br>
+                SELECT ROSTER_TIMECARD WITH CUSTOMER = 'SOCRELIEF'</p>
+                <p>The goal is to create as few records for the extract as possible, and therefore we start with a date range select of the ROSTER_DATE (it is invoiced, and hence the data result returns just the small sub-set), and then you create the next SELECT which works on the previous result.</p>
+                <p><img src="../2013/helpdesk/img/hd_0051b.png" height="363" width="533"></p>
+                <p>&nbsp;</p>
+                <p>The above image shows the completed form as is required to complete the data manipulation.</p>
+                <p>The final entry relating to "Change To" is possibly a piece of information that you shall have to confirm with Powerforce support to confirm for you. In this instance the goal is to force the data element "INVOICE_XREF" to .null. (cleared out, or "").<br>
+                </p>
+                <hr>
+                <h2>Executing the Change </h2>
+                <p>&nbsp;</p>
+                Pressing "Change" will throw up a provisional message to confirm your intention ( below).
+                <p><img src="../2013/helpdesk/img/hd_0051c.png" height="226" width="462"></p>
+                <hr>
+                <h2>Selection Criteria</h2>
+                <p>&nbsp;</p>
+                The processing will then start by executing ech of your lines, one after the other.
+                <p><img src="../2013/helpdesk/img/hd_0051d.png" height="92" width="289"></p>
+                <hr>
+                <h2>Confirming the Results</h2>
+                <p>&nbsp;</p>
+                Once the data is selected, you will be prompted to confirm that change - you should have established through other means the correct number of records that you expect to change. If the number you expect is not shown, then select "No", and start again.
+                <p><img src="../2013/helpdesk/img/hd_0051e.png" height="114" width="218"> If you confirm in the positive, 
+                </p><p><img src="../2013/helpdesk/img/hd_0051f.png" height="94" width="181"></p>
+                <hr>
+                <h2>Verifying change</h2>
+                <p>&nbsp;</p>
+                <p>To confirm that you change has worked, refer to the original workbench detail.</p>
+                <p><img src="../2013/helpdesk/img/hd_0051g.png" height="121" width="270"></p>
+                <hr>
+                
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				
+				<h1>the issue</h1>
+			    <p>I would like to configure  Overtime on all our modern award classification in a similar manner to VOT.  &nbsp;<br>
+At the moment we have VOT set up  on our awards where we assign a shift as VOT and rates and super provisions are  taken care of. </p>
+                <p>In a similar manner I would like  OT to be set up where I can assign a shift as OT and the rates are  automatically calculated and other provision are taken care of like no super  etc. </p>
+              
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+
+					<h1>Overview</h1>
+				  <p>The existing AI setup has the following detail behind it</p>
+				  <p>The pay class detail (classification codes) <img src="../2014/helpdesk/img/hd_66a.png" alt="payclass" height="383" width="486"></p>
+				  <p>The Award rule (MODERN) has the following relevant detail / data.</p>
+				  <p><img src="../2014/helpdesk/img/hd_66b.png" alt="award rule" height="506" width="873"></p>
+				  <p>and the final piece is the TimeZone definition:</p>
+				  <p><img src="../2014/helpdesk/img/hd_66c.png" alt="time zone" height="418" width="598"></p>
+              <h1>In Summary</h1>
+              <p>If the configuration of this award is working for you, then then only component that you must duplicate across your other awards to which you wish to configure this functionality is to duplicate the "Overtime Base Rate" details from the initial image, remembering to change the $ values as appropriate.</p>
+              <p>&nbsp;</p>
+              <p><img src="../2014/helpdesk/img/hd_66a.png" alt="pay class" height="383" width="486"></p>
+              Please ensure that you read the following article for a fuller outline of the setup of voluntary overtime : <a href="../2013/pay/pf_ai_voluntray_overtime.html">Voluntary Overtime Award Configuration</a>
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

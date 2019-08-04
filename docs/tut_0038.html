@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="index.html" class="sLocator">Home</a> > Helpdesk 
+<a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></strong></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="77%" valign="top"><p class="TutParagraph">Site specific pay classifications are not working.</p>
+                    <p class="TutParagraph">When employees work at a specific site, they are meant to be paid at a rate different to their own generic pay class.</p></td>
+<td width="23%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p>
+<p align="center" class="TutParagraph">&nbsp;</p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Introduction <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The configuration of site specific pay class is defined via the Client Operations screen - on the Rates tab, as below:</p>
+<p><img src="images/hd_0038.png" style="width:100%; max-width:535px;" alt="site rates" /></p>
+<p>Reading the configuration:</p>
+<p>On the left hand side (LHS), are the rate changes for Permanent employment type classification, and Casual on right (RHS) as indicated above.</p>
+<p>Reading the RHS Casual definition:</p>
+<ul>
+  <li>Employees whose classification is of a &quot;Grade&quot; CA-L1 CAS, CA-L2 CAS or 3, are to be changed to be paid at &quot;CA-L3 CAS&quot;.</li>
+</ul>
+<p class="w2SubTitleColor">Checking the raw data<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The recommended way to debug problems is to review a shift which the client has indicated is not calculating out correctly. In that way, when a correction is made, we can re-calculate the shift in error and verify whether it is now correct. The shift in error is shown below, and re-viewing the detail above - this shift should have changed to CA-L3 CAS.</p>
+<p class="TutParagraph"><img src="images/hd_0038a.png" style="width:100%; max-width:453px;" alt="shift" /></p>
+<p class="TutParagraph">The next thing is to verify that the employee on  this site is of a classification which has the grades shown above in the 1st image. </p>
+<p class="TutParagraph">Checking employee details confirms that this is indeed the case, and that the employee has an employment type of &quot;CASUAL&quot;.</p>
+<p class="TutParagraph">The details for the classification confirm that the Grade is one of the required types as detailed above:</p>
+<p class="TutParagraph"><img src="images/hd_0038b.png" style="width:100%; max-width:620px;" alt="classification" /></p>
+<p class="TutParagraph">The classification is ok, so we'll now confirm the details of the employee's employment type (CASUAL):</p>
+<p class="TutParagraph"><img src="images/hd_0038c.png" style="width:100%; max-width:608px;" alt="employment type" /></p>
+<p class="TutParagraph">Here is the error, a casual employee has to be less than 1.0 (generally 0.5), and hence the employee was not being see as a CASUAL on the Client Operations screen. And if you review the initial image, you will see that '3' is not a grade showing on the permanent employee (LHS) of the configuration.</p>
+<p class="TutParagraph">&nbsp;</p>
+<p class="w2SubTitleColor">Apply the correction<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The employment type for Casual has to change it's FTE value to less than 1.0, and we recommend 0.5.</p>
+<p><img src="images/hd_0038d.png" style="width:100%; max-width:597px;" alt="employment type" /></p>
+<p>Now, return to the scheduling workbench, find a blank entry against the same employee with the original error, click Book to create a new shift for that employee, &quot;Pressing Book&quot; yields:</p>
+<ul>
+  <li>A blank shift as you can see below, with no times entered.</li>
+  <li>However, the system has already switched the classification to CA-L3 CAS (because you have booked the shift against the same employee that is a grade 3).</li>
+</ul>
+<p><img src="images/hd_0038e.png" style="width:100%; max-width:479px;" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p class="w2SubTitleColor">Summary<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">With the employment type corrected, the system is able to perform as expected.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

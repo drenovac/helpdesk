@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>Overview</h1>
+				  <p>It has recently come to our attention that the code associated with emailing reports was not handling the interpretation of errors returned by the underlying windows mailing system correctly.</p>
+				  <p>This document outlines the software changes made to correct this error handling.</p>
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+                <h2>Explanation</h2><br>
+                <p>Powerforce uses the emailing functionality of Windows to send emails. In simple terms, Powerforce packages an email message including any attachments and gives it over to Windows to send out. </p>
+                <p>Windows in turn carries out the task, and replies back to Powerforce that the job is done.<br>
+                Powerforce on seeing this "job done" message, prints out on its statusline "Email sent to " bob@gmail.com</p>
+                <p>Unfortunately the coding of the interpretation of Windows' reply was incorrect. Whilst windows gave back 6 - 8 lines of text, Powerforce did not read the content of the lines to garner anything from it, rather accepting that a reply from windows was an indication of task successfully completed.				  <br>
+                </p>
+                <hr>
+                <h2>Software Changes</h2><br>
+                <p>We have modified the Powerforce code that deals with sending emails to look into the message returned by Windows, and scan for a particular string indicating errors in the requested task of sending the email. The most common problem relates to the mail server being unavailable and / or other modes of connectivity problems.</p>
+                <p>On detecting a particular error code "INIT-421", the program code will correctly display that the email was NOT delivered. </p>
+                <p>You may then utilise the email_log error report to forward the errors to your IT support to assist in resolving.</p>
+                <p>&nbsp;</p>
+                <hr>
+                <h2>External Information links</h2>
+                <p>&nbsp;</p>
+                <p>
+                <a href="http://social.technet.microsoft.com/Forums/en-US/exchangesvrsecuremessaging/thread/606e823b-74ee-486c-b074-9d88c69904f5">421 4.3.2 Service not available</a><br>
+                <a href="http://social.technet.microsoft.com/Forums/en-US/exchangesvrsecuremessaging/thread/8e451fb0-ef38-44a8-8a8d-86f072c2716b">421 4.3.2 Service not active</a> <br>
+                <a href="http://support.microsoft.com/kb/323350">How To Test SMTP Services Manually in Windows Server 2003</a> <br>
+                <a href="http://drewsymo.com/how-to/smtp-telnet-example-commands-examples-for-smtp-telnet-testing/">Use telnet to test SMTP connectivity<br>
+                 How to telnet to an SMTP server
+                </a><br>
+                <a href="http://social.technet.microsoft.com/Forums/en-US/exchangeserverpreview/thread/48331a35-fd58-4bb7-957d-08814905149b">Temporary Server Error</a></p>
+                <hr>
+                <h2>Manually checking smtp connectivity (example)</h2>
+                <p>&nbsp;</p>
+                telnet: &gt; telnet mx1.example.com smtp<br>
+                telnet: Trying 192.0.2.2...<br>
+                telnet: Connected to mx1.example.com.<br>
+                telnet: Escape character is '^]'.<br>
+                server: 220 mx1.example.com ESMTP server ready Tue, 20 Jan 2013 22:33:36 +0200<br>
+                client: HELO client.example.com<br>
+                server: 250 mx1.example.com<br>
+                client: MAIL from: &lt;sender@example.com&gt;<br>
+                server: 250 Sender &lt;sender@example.com&gt; Ok<br>
+                client: RCPT to: &lt;recipient@example.com&gt;<br>
+                server: 250 Recipient &lt;recipient@example.com&gt; Ok<br>
+                client: DATA<br>
+                server: 354 Ok Send data ending with <crlf>.<crlf><br>
+                client: From: sender@example.com<br>
+                client: To: recipient@example.com<br>
+                client: Subject: Test message<br>
+                client: <br>
+                client: This is a test message.<br>
+                client: .<br>
+                server: 250 Message received: 20040120203404.CCCC18555.mx1.example.com@client.example.com<br>
+                client: QUIT<br>
+                server: 221 mx1.example.com ESMTP server closing connection<br>
+                <hr>
+                </crlf></crlf>
+   			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

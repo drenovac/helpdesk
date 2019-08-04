@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>Still calculating pay details incorrectly</h1>
+				  <p>This is a continuation of ticket <a href="tut_0073.html">0073</a>, where the customer is stating that the suggested changes are not working.</p>
+				  <p><img src="../2014/helpdesk/img/hd_74a.png" width="843" height="106"></p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" -->
+				</div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+					<h1>&nbsp;</h1>
+				  <p><br>
+			      </p>
+				  <hr>
+                  <h1>Introduction</h1>
+                  <p>The below image represents the instructions from the client to helpdesk.<br>
+                    It appears that helpdesk has not understood the &quot;Site Rate..&quot; request.               </p>
+                  <p><img src="../2014/helpdesk/img/hd_74b.png" width="625" height="117"></p>
+                  <p>Taking any of the 4 sites noted in the above image, we confirm that the &quot;Permanent Auto Classification&quot; is set at the same value as the &quot;Casual Auto Classification&quot;, which is perhaps the issue leading to this continutation of incorrect pay rates.</p>
+                  <p><img src="../2014/helpdesk/img/hd_74c.png"></p>
+                  <p>In reviewing the requested values for the &quot;Site Rate&quot;, we have concluded that there's a need to create 4 distinct and new classification codes to cover the requirements expressed above.</p>
+                  <p>The new classifications have been given the names reflecting the sites to which they correspond, to make the linkages easy to follow.<br>
+                    An example of how to correct the configurations is shown below for site (543).
+                  </p>
+                  <p><img src="../2014/helpdesk/img/hd_74d.png"></p>
+                  <p>Ensuring that we double-check everything, we've checked the 2 employees in this issue, and confirm their employment types as shown below.</p>
+                  <ul>
+                    <li>The customer note is clear that these are both intended to be full-time employees, yet you can see in the &quot;PPT-SALARY&quot; employment definition that the FTE value is 0.8.<br>
+                      A full-time employee must have a value of 1.0 or greater for the award logic to use the &quot;Permanent Auto Classification&quot; grid (as per the image above), and be considered full-time.<br>
+                      Until that change is made, this employee will continue to be viewed as &quot;Casual&quot; for the purposes of this exercise.
+                    </li>
+                  </ul>
+                  <p><img src="../2014/helpdesk/img/hd_74e.png" width="610" height="113"></p>
+                  <p>&nbsp;</p>
+                  <p><img src="../2014/helpdesk/img/hd_74f.png" width="571" height="109"></p>
+                  <ul>
+                    <li>One the one employee that is correctly an FTE of 1.0, their original shift costs are shown immediately below.<br>
+                      This is on the scheduling workbench - showing the employee's regular rate of pay.<br>
+                      If you double-check anywhere within this Costs tab (to recost the shift), the system will re-work its Award Interpreter (AI) logic to pick up the now correct new rate of $26.10 (as shown in the lower part of the image below)
+                    </li>
+                  </ul>
+                  <p><img src="../2014/helpdesk/img/hd_74g.png" width="539" height="231"></p>
+                  <hr>
+                  <h1>Additional Information</h1>
+                  <p>The following two items explain in detail how the site / rate configurations are configured.</p>
+                  <p><a href="http://www.rosterme.com.au/helpdesk/tut_0038.html">Site specific classification (worked example)</a></p>
+                  <p><a href="http://www.rosterme.com.au/helpdesk/tut_0025.html">Site specific rates</a></p>
+				</div>
+			</div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Sunday, Nov 23, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

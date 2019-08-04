@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Introduction
+                  </p>
+<p class="TutParagraph">In our last helpdesk example we discussed the incorrect payment of staff resulting from not running the cast overtime process. In this document we outline what you must do to reconcile and correct the problem.</p>
+</td>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Modules / Module Options</a></p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph"><strong>The cast overtime process</strong> is a process that you run prior to a payroll (where the award defines as an example 76 hour fortnight) so that the system correctly calculates  overtime and loadings over the period in question (eg 76 hours). What's happended in our example is that we have paid our staff for the period, only to realise that the cast overtime process was not run, and hence there's a likelihood that the pays are incorrect.</p>
+<p class="TutParagraph">The pays will be incorrect only for those employees whose employment type defines that they have an overtime rule attached, as per the following:</p>
+<p class="TutParagraph"><img src="images/hd00002f.png" style="width:100%; max-width:522px;" alt="overtime rule"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">To understand whethere there are any differences, we need to:</p>
+<ul>
+                                  <li> <span class="TutParagraph">note the current pay details,</span></li>
+                                  <li class="TutParagraph">cast the overtime,</li>
+                                  <li class="TutParagraph">rerun the pay,</li>
+                                  <li class="TutParagraph">compare the results.</li>
+                           </ul>
+
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Note current pay details <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">What you need to do here is to print out the current pay's Payroll Summary Report - this will detail the wages and taxes already paid on a per individual basis.</p>
+<p class="TutParagraph">Then using the pre-payroll reports, print out the report for the period of the pay ensuring that you cover all of the employees included in the payrun. The  item that you want to note here is the final total line detailing the breakdown of normal, hour 1/2, double, etc totals. We'll use this as a comparison after the payrun has been re-processed.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Cast the overtime - part 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">IMPORTANT NOTE: You would run the following steps on a &quot;COPY&quot; of your production database, not against the live production database as that will invalidate your financial details.</p>
+<p class="TutParagraph">On a copy of your production system:</p>
+<p class="TutParagraph">Uncommit the payrun in error - this will allow you to manipulate the rosters involved in the payrun.</p>
+<p class="TutParagraph">Re-cost the rosters through <a href="../general/pf_getting_around.html">[ Tools ] &ndash;&gt; Recost Time Schedules</a> via:</p>
+<p><img src="images/hd00003a.png" width="226" height="265" alt="recost time schedule"></p>
+<p class="TutParagraph">Ensure that you enter the correct values corresponding to your own circumstances.</p>
+<p class="TutParagraph">This will reset the values on the &quot;costs&quot; tab of each roster to original values as if you had just created the individual roster entries. At this stage you may re-run the pre-payroll report to confirm to yourself that the total values for hours and hour types have changed.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Cast the overtime - part 2<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Having reset the rosters to original values, we're now in a position to cast the overtime, so using</p>
+<p class="TutParagraph"> <a href="../general/pf_getting_around.html">[ Nav ] &ndash;&gt; Scheduling / Module Options</a>, as per: <img src="images/hd00003b.png" style="width:100%; max-width:385px;" alt="cast overtime"></p>
+<span class="TutParagraph">Once you have cast overtime,  again, using the pre-payroll report compare the grand total line to quickly review that the process is indeed working for you.</span>
+                
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Rerun the pay<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Satisfied that the cast overtime has worked, you are now ready to re-run your payrun. Using the same batch header from your uncommitted payrun, rerun it using the &quot;wizard&quot; icon (so that your previous paramaters are re-used).</p>
+<p class="TutParagraph">Print out the Payroll Summary Report and compare the new details against the original.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Compare the results<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">With the differences noted, you need to then create manual adjustments for each employee and run a payrun to pick up the adjustments.</p>
+<p class="TutParagraph">The manual adjustments are entered via the manual pay adjustments screen <a href="../general/pf_getting_around.html">[ Nav ] &ndash;&gt; Payroll / Pre Payrun Manual Adjustments</a></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"></table>
+                <img src="images/hd00003c.png" style="width:100%; max-width:663px;" alt="manual adjustments">
+<p align="right">
+    
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="tut_0002.html">Overtime Not Cast</a></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+  <tr>
+<td valign="top">&nbsp;</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

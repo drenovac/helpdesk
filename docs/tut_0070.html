@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				
+				<h1>the issue (<a href="tut_0066.html">continuation of hd_0066</a>)</h1>
+			    <p>The details of hd_0066 are fine, other than when casting overtime. </p>
+			    <p>When casting overtime, the overtime details relating to a shift that I may have set as VOT are over-written, and hence the shift to which the VOT is required is un-set.</p>
+                            
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">					
+				
+    			  <h1>Overview</h1>
+				  <p>The normal shift details are as below, including the cost tab detail.<br>
+				    Setting the scheduling code into VOT, and verifying that the VOT rate is being applied (23.31)
+				  </p>
+				  <p><img src="../2014/helpdesk/img/hd_70a.png" height="290" width="609"></p>
+				  <p>Setting the shift to VOT also calculates out correctly:</p>
+				  <p><img src="../2014/helpdesk/img/hd_70b.png" height="168" width="597"></p>
+				  <p>The first component of pay class calculations is the Award Interpreter, and in the sample setup below we've selected to chop up Monday into the first 2 hours, followed by a slot of 3, followed by a further 2, etc. This is for demonstration purposes only. You will configure your own award as fits your needs.</p>
+				  <p><img src="../2014/helpdesk/img/hd_70c.png" height="502" width="786"></p>
+				  <p>Here is where we kludge the AI into doing things for us, becuase various configuration pieces are in place.</p>
+				  <p>Please note rows 1-4 are the same VOT codes as in rows 6-9, however with very different rates of pay. <br>
+				    This is to demonstrate on the scheduling workbench, that the elements in rows 1-4 are being pulled through.<br>
+				  </p>
+				  <p><img src="../2014/helpdesk/img/hd_70d.png" height="335" width="460"></p>
+				  <p>If you now go to the scheduling workbench, and open a shift that is paid through the award that is configured above, noting the type of shift is "Normal Day". That's to tell the system to do things as always.</p>
+				  <p>Then on the LHS you will notice a "Pays" dropdown - this is a facility where you the operator can force the system to start the shift at a different pay level.<br>
+				    That pay level (and hence the display) reflects directly on the "Overtime Base Rate" configuration as shown above.
+				  </p>
+				  <p><img src="../2014/helpdesk/img/hd_70e.png" height="301" width="629"></p>
+				  <p>&nbsp;</p>
+				  <p>In this example, we choose to pay the pay-rate / code "VOT Mon-Fri", and so select it on the dropdown.<br>
+				    Open the costs tab, and note what has transpired, partocularly the hourly rates of pay.<br>
+				    Then note, the breakup of the shift hours is as per the definition of "Overtime Spans" as we mentioned in the detail of the award interpreter (above).
+                  </p>
+				  <p><img src="../2014/helpdesk/img/hd_70f.png" height="120" width="824"></p>
+				  <p>&nbsp;</p>
+				  <p>The "Pays" function allows the operator to set how the award interpreter is to handle the payment for the shift, whilst maintaining the rules within the confines of the pay class (classification code)</p>
+				  <p><img src="../2014/helpdesk/img/hd_70g.png" height="258" width="610"></p>			  
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

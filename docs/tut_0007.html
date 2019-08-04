@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Introduction</p>
+<p class="TutParagraph">Overtime rules not calculating:</p>
+<span class="TutParagraph">Powerforce is set up to pay hours outside a  daily base, or where nominated as overtime shifts at overtime rates.&nbsp; Currently when we select hours as overtime no  values come across.</span></td>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Modules / Module Options</a></p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><span class="TutParagraph"><strong>Using the scheduling workbench,</strong>open the shift in question.</span><br>
+                <img src="images/hd00007a.png" style="width:100%; max-width:603px;" alt="hours calc"></p>
+<p class="TutParagraph">Opening the costs tab, shows the image below indicating no costs.</p>
+<p class="TutParagraph">To confirm that this is not just a calculation error during the initial shift creation, double-click anywhere in the edit table. This will re-calculate the costs, and on re-calculation nothing has changed, therefore the error still persists.</p>
+<p><img src="images/hd00007b.png" style="width:100%; max-width:639px;" alt="shift costs"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">This type of error is indicative of an error in the classification definition. We can see from above that the classification is &quot;Classification Code : 97&quot;, so we'll open the classification codes window to confirm the data.</p>
+<p class="TutParagraph"><img src="images/hd00007c.png" style="width:100%; max-width:493px;" alt="classification code"></p>
+<span class="TutParagraph">We can see from the image that there's a value against "Normal" value of 16.9282 indicating that there's a valid rate, which indicates that under normal circumstance the value would be used to calculate the values on the costs tab.</span>
+                                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 2<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The next item to investigate is the Award Rule definition, and in the above example, we see that the award rule is HNIA.</p>
+<p class="TutParagraph"><img src="images/hd00007d.png" style="width:100%; max-width:796px;" alt="award rule"></p>
+<span class="TutParagraph">The original problem was related to a shift on "Saturday", this image of the award rule indicates that there is no award rule defined for handling Saturday.</span>
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 3<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">To investigate the issue and confirm that this will correct the problem, we define an award definition for Saturday, in this case to match Sunday.</p>
+<p class="TutParagraph"><img src="images/hd00007e.png" width="125" height="69" alt="award rule"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 4<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Returning to the scheduling workbench, then to the costs tab,  'double-click' on the table to re-calculate the costs, the data below displays indicating that the error was indeed the award rule definition.</p>
+<p class="TutParagraph"><img src="images/hd00007f.png" style="width:100%; max-width:499px;" alt="costs tab"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">In general the combination of classification codes and award rules is the principal cause of errors on the calculations relating to employee cost details.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

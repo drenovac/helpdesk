@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				
+				<h1>Understanding T&amp;A</h1>
+				  <p> This document walks you through the various configuration and processes involved in the Time &amp; Attendance module..</p>
+              
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+                    <a href="tut_0063.html">Another example of running the T&amp;A import</a>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+					
+					<h1>Overview - timeclock export format</h1>
+				  <p>Your time clock vendor will have provided you the format of their time clock data export. In this example, we'll be using the following layout:<img src="../2014/helpdesk/img/hd_61a.png" alt="t&amp; layout" height="90" width="527"></p>
+				  <p>By simply viewing this data, you can guess at the values presented. In this example, we've chopped all bar 2 entries to use as the walkthrough.</p>
+                  <hr>
+                  <h1>Powerforce T&amp;A configuration to match</h1>
+                  <p>The below configuration represents the layout of the timeclock data above, with each field being described as 'positional' within the single line.</p>
+                  <p>Ensure that you check the "Use employee card xref". This indicates that the timeclock employee id and the payroll id are not the same, and that the T&amp;A software has to translate one from the other.</p>
+                  <p>The device being set as "BIOSCAN" refers to the internal programming format for your particular time clock.</p>
+                  <p><img src="../2014/helpdesk/img/hd_61b.png" alt="T&amp;A configuration" height="509" width="389"></p>
+                  <p>&nbsp;</p>
+                  <p>The source and backup directory entries have to be changed according to where the T&amp;A clocking data is being copied to either by yourselves manually or by the time clock data (automatically).</p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Timeclock data - employee details</h1>
+                  <p>Reviewing the input data: <img src="../2014/helpdesk/img/hd_61a.png" alt="timeclock data" height="90" width="527"> you can see that the employee ids are shown as 2005 &amp; 2021. And, we've ticked the 'use xref' checkbox</p>
+                  <p>Using employee 2021 (from the timeclock's point of view), remembering that timeclocks can generally only use numerics for their ids, you see that BUTLEM is the payroll employee id of this individual, and this is the value you will need to locate roster data for this employee within Powerforce</p>
+                  <p><img src="../2014/helpdesk/img/hd_61c.png" alt="timeclock names" height="112" width="483"></p>
+                  <hr>
+                  <h1>Confirm the shift details</h1>
+                  <p>You can see from the timeclock information that for employee 2021, there is an IN_ENTRY clocking on the 21/03/2014 at 05:47. So, before handling the time clock import, let's check what information the shift has to date.</p>
+                  <p>&nbsp;</p>
+                  <p><img src="../2014/helpdesk/img/hd_61d.png" alt="time clock in roster" height="172" width="647"></p>
+                  <hr>
+                  <h1>Overview - running the clock upload process</h1>
+                  <p><img src="../2014/helpdesk/img/hd_61e.png" alt="run timeclock monitor" height="168" width="525"></p>
+                  <hr>
+                  <h1>Timeclock import logs / exceptions</h1>
+                  <p><img src="../2014/helpdesk/img/hd_61f.png" alt="exceptions log" height="474" width="950"></p>
+                  <hr>
+                  <h1>Overview </h1>
+                  <p>xx</p>
+                  <p><img src="../2014/helpdesk/img/hd_61g.png" height="220" width="843"></p>
+                  <p>&nbsp;</p>
+                  <p>If you review the section titled "Shift parameters", you will see the "Create roster" checkbox ticket - this means that if the T&amp;A monitor finds a time clock entry and finds no shift on the roster, to auto-create a shift for that employee at the site noted under "Default Site".</p>
+                  <p>The circumstances of where you would use this is in the case of where you send a replacement employee to a site, and you have not yet updated the roster.<br>
+                    And, the reason for setting a "Default site" of WESPAR is similarly, that the T&amp;A monitor cannot possibly know where this unscheduled shift is to be worked, and yet to create a shift as noted in the earlier comments, requires a "roster site". You will need to subsequently change this manually.
+                  </p>
+                  <p><img src="../2014/helpdesk/img/hd_61i.png" alt="T&amp;A config" height="509" width="389"></p>
+                  <hr>
+                  <h1>In Summary</h1>
+                  <p>The T&amp;A clocking data appears on the T/Attend tab of a shift when you edit the shift.</p>
+                  <p>The data in this section cannot be manually overwritten as it serves as the OH&amp;S validation of the time clocking.</p>
+                  <p><img src="../2014/helpdesk/img/hd_61h.png" height="228" width="871"></p>
+                  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

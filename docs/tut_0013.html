@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Introduction</p>
+<p class="TutParagraph">How will the cast overtime process  treat annual leave in the first week of a 76 hour fortnight for a rotating shift worker.               </p>
+</td>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ N/A ]</a></p>
+</td>
+</tr>
+</table>
+                
+                <p class="w2SubTitleColor">Introduction<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The requirement can best be displayed through a table:</p>
+<table  border="1" cellpadding="1" cellspacing="1">
+        <tr>
+<td width="29">&nbsp;</td>
+<td  class="TutParagraph">Week 1</td>
+<td  class="TutParagraph">Week 2</td>
+<td  class="TutParagraph">Requirement for Award Casting</td>
+</tr>
+        <tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+        <tr>
+<td>1</td>
+<td>40 hrs annual leave</td>
+<td>40 hrs normal time</td>
+<td>76 hours normal + 4 O/T</td>
+</tr>
+        <tr>
+<td>2</td>
+<td>40 hrs normal</td>
+<td>40 hrs annual leave</td>
+<td>40 hours normal + 40 hours A/L (annual leave)</td>
+</tr>
+        <tr>
+<td>3</td>
+<td>40 hrs annual leave</td>
+<td>40 hrs annual leave</td>
+<td>80 hours A/L</td>
+</tr>
+        <tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+                
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Overview<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The approach we adopted to test how the 76 Hour rule will behave is to create the above rosters, cast the overtime and run the payrun reports to verify the results. Step by step follows:</p>
+<ul>
+                                  <li class="TutParagraph">Using our test company, we've created 5 employees numbered EMP1 - EMP5, so that we can control their employment type and classification code.</li>
+                                  <li class="TutParagraph">Define a 76 Hour overtime rule, and link it to the classification code of the above employees.</li>
+                                  <li class="TutParagraph">Using the scheduling workbench, create two weeks  of ad hoc shifts</li>
+                                  <li class="TutParagraph">For each of the 3 lines of shifts above, assign 1 employee to each line. For the week in which the annual leave is to be noted, edit each shift, and using the shift type dropdown, change the shift type to &quot;annual leave&quot;.</li>
+                                  <li class="TutParagraph">Lastly, for each of the 3 employees, again through the scheduling workbench, cast their overtime over the two weeks, and verify the results.</li>
+                           </ul>
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Creating the control records<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Before you create the sample employees, ensure that the classification code, 76 hour rule and scheduling code are all configured. For this example, they are as follows:</p>
+<p class="TutParagraph">The classification code &quot;Penalties&quot; tab, has an overtime rule defined:</p>
+<p><img src="images/hd0013a.png" style="width:100%; max-width:563px;" alt="classification"></p>
+<p><br />
+                                The overtime rule is a basic definition, as per the following image:</p>
+<p><img src="images/hd0013b.png" style="width:100%; max-width:492px;" alt="award rule"></p>
+<span class="TutParagraph">and finally, the scheduling code as per the following:</span> <img src="images/hd0013c.png" style="width:100%; max-width:575px;" alt="76hour rule">
+                                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Casting overtime<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Just before proceeding to the cast overtime, ensure that the adhoc shifts for two full weeks is completed. On completion of setting the correct shifts via the scheduling code, still on the scheduling workbench - cast the overtime. Please refer to this documenting <a href="tut_0002.html#castovertime"><span class="TutLink">casting overtime</span></a> if you require any assistance.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Review results <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Reviewing the results shows that the 40 hours of annual leave, be it the first or the second week, did not affect the calculation, and resulted in the 40 hours not being drawn into the total hours worked.</p>
+<p class="TutParagraph"><img src="images/hd0013d.png" width="253" height="380" alt="overtime"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Change the definition of the scheduling code<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">You will have noticed that the scheduling code has a checkbox, titled &quot;Include for overtime&quot;, which sounds like what is missing from the calculation to bringing in the annual leave hours into the total hours calculation. So in making the change, we get: <img src="images/hd0013e.png" width="201" height="195"></p>
+<p>Having changed the definition, recast the overtime again for each of the employees.</p>
+<p>The results this time, are that the annual leave hours are included in both the option 1 and 2, and each is receiving 4 hours overtime. We still don't have the required result, we have 1/2 the result.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Create a new scheduling code<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">We can see that the scheduling code is working, what is missing is the effect being directed at the week where the annual leave is in the first week. What we choose to do is to create a new scheduling code, as follows:</p>
+<p class="TutParagraph"><img src="images/hd0013f.png" style="width:100%; max-width:575px;"></p>
+<p>So, now we have two scheduling codes, one which asks that its hours be included in the total hours count, and one which does not have its hours included.</p>
+<p>With this new configuration, the scheduling codes of the annual leave shifts for the first week for employee EMP1, has to be changed to the above scheduling code. With the scheduling code changed, we against cast overtime for the shifts.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Summary<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The cast overtime process does its work over the period defined, and cannot be tuned to treat the same type of hours (annual leave) to be treated differently depending in which half of the 76 hour period they fall. The user however can control the hour type themselves as the time of setting the schedule (certainly prior to payroll), and the cast overtime can then do its work.</p>
+<p class="TutParagraph">Using the scheduling codes is a better approach than editing a finished pay, because the system can correctly manage all accruals and entitlements generically.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Further information<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Whilst we had the opportunity to write up the workings of the cast overtime process, we extended the above scenario to demonstrate how casting overtime does its work.</p>
+<table border="1" cellpadding="1" cellspacing="1">
+        <tr>
+<td width="29">&nbsp;</td>
+<td  class="TutParagraph">Week 1</td>
+<td  class="TutParagraph">Week 2</td>
+<td  class="TutParagraph">Produced outcome</td>
+</tr>
+        <tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+        <tr>
+<td>1</td>
+<td>40 hrs annual leave</td>
+<td>40 hrs normal time</td>
+<td>40 hours A/L + 40 hours normal + no O/T</td>
+</tr>
+        <tr>
+<td>2</td>
+<td>40 hrs normal</td>
+<td>40 hrs annual leave</td>
+<td>40 hours A/L + 40 hours normal + no O/T</td>
+</tr>
+        <tr>
+<td>3</td>
+<td>40 hrs annual leave</td>
+<td>40 hrs annual leave</td>
+<td>80 hours A/L</td>
+</tr>
+        <tr>
+<td>4</td>
+<td>40 hrs A/L (inc hours)</td>
+<td>40 hrs normal time</td>
+<td>40 hours A/L + 36 hours normal + 4 hours O/T in the first week</td>
+</tr>
+        <tr>
+<td>5</td>
+<td>40 hrs normal</td>
+<td>40 hrs normal time</td>
+<td>76 hours normal + 4 hours O/T</td>
+</tr>
+</table>
+                
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">We added a further two employees, so that each example could be shown against an individual employee.</p>
+<p class="TutParagraph">The scheduling workbench over two weeks (use 14 day view):</p>
+<p class="TutParagraph"><img src="images/hd0013g.png" style="width:100%; max-width:593px;"></p>
+<img src="images/hd0013h.png" style="width:100%; max-width:412px;"><br />
+                <span class="TutParagraph">And, finally the pre-payroll report to confirm the calculations for each of the scenarios outlined can be found at this</span> <a href="images/hd0013a.pdf" class="TutLink">pre-payroll link</a>.
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				<h1>Overview</h1>
+				  <p>This document details the creation of SPAN code definitions for the use of Powerforce to Micropay export (as per client ABC who have a customised Micropay export function).</p>
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+                <h1>Explanation</h1>
+                In the case of client ABC, the export function calls for a mapping of internal Powerforce AI codes to specific award based span codes (as used in Micropay).
+                <p>&nbsp;</p>
+                <hr>
+                <p>To create the configuration, work backwards from Micropay into Powerforce.</p>
+                <p> In the example shown here - in Micropay the span code is called "SYDMARF C".<br>
+                Create a Generic Reference entry as shown below with the exact id as is required in Micropay (dropdown shows other span codes).</p>
+                <p><img src="../2013/helpdesk/img/hd0045a.png" alt="span codes" height="337" width="442"><br>
+                </p>
+                <hr>
+                <p>The second part is to create an Allowance whose id ends in "SPAN".</p>
+                <p>In this example below, the allowance code is called "SYDMSPAN", and its definition is shown below.</p>
+                <p>Finally on the classification code definition, link the allowance code to the award link code (NSN in the example below, infering that the award rule "NSW-SPAN" as such a code defined).</p>
+                <p>So, what you have is the classification pointing to an allowance code ending in "SPAN", which then in its own definition has an "Export Cross Reference" of the generic reference code ("SYDMARF C" the actual Micropay span code).</p>
+                <p><img src="../2013/helpdesk/img/hd0045.png" alt="span codes" height="810" width="742"></p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+		      
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

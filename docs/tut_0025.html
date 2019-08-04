@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="index.html" class="sLocator">Home</a> > Helpdesk 
+<a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></strong></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="77%" valign="top"><p class="TutParagraph">We have a number of sites where we use sub-contractors. The sub-contractors themselves may all be on various charge rates, yet we want everyone who works at this site to be paid $28.00 per hour (as an example).
+</p></td>
+<td width="23%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p>
+<p align="center" class="TutParagraph">&nbsp;</p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Introduction <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The way to achieve this in Powerforce is to set up a site specific rate at the site. In this manner, the pay class is driven by the act of working on the site.</p>
+<p>To set this up use the Client Operations screen, on the Rates tab.</p>
+<p>This tab has two sections:- on the LHS you have the &quot;Permanent Auto Classification&quot; setup &amp; on the RHS you have the &quot;Casual Auto Classification&quot; setup. However, before going on, a quick explanation of the terms used here:</p>
+<blockquote>
+  <p>In Powerforce employment types are given a weighting which we call the FTE (full-time equivalent), in order to differentiate the ratio of hours worked in relation to a 'Fulltime Employee' that is set to an FTE of 1.0. Therefore any employment type defined which has an FTE value of 1.0 is considered for this LHS: <img src="images/hd0025k.png" style="width:100%; max-width:575px;" alt="full time" /></p>
+  <p>&nbsp;</p>
+  <p>Conversely, the various employment types that refer to your &quot;Casual&quot; workforce are assigned an FTE value of less than 1.0. Generally 0.50 to represent working 1/2 as much as a fulltime employee. However, the number of hours has no bearing on this, only the setting of the FTE value to less than 1.0: <img src="images/hd0025j.png" style="width:100%; max-width:584px;" alt="casual employee" /></p>
+</blockquote>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>The manner in which the below configuration works is:</p>
+<blockquote>
+  <p>For every in-coming 'Grade' of employee (irrespective of the actual pay class), you map the grade to a new classification (in this example : TWENTY-8).</p>
+  <p>In the image below, we have mapped grades 1 - 4 to the classification twenty-8. if you have more grades, ensure that you map each grade to the new pay class. Grade comes from the classification code definition (as per image at Step 1 below).</p>
+  <p>We have also only (in this example) carried this mapping out for those employees ( be they real company employees or sub-contractors), whose employment type is &quot;CASUAL&quot;.</p>
+</blockquote>
+<p><img src="images/hd0025a.png" style="width:100%; max-width:691px;" alt="client operations" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">You must first ensure that you have the target classification defined:</p>
+<p class="TutParagraph"><img src="images/hd0025b.png" style="width:100%; max-width:938px;" alt="pay class" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Testing the configuration <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Create adhoc shifts, and verify the details of the shifts</p>
+<ul>
+  <li>Open the scheduling workbench to the site at which you wish to create the adhoc shifts.</li>
+  <li>Once the shifts have been created, double-click on a shift to confirm the shift requirements.</li>
+</ul>
+<p><img src="images/hd0025e.png" style="width:100%; max-width:761px;" alt="adhoc shifts"></p>
+<p>&nbsp;</p>
+<p>Open a shift to see its configuration. The point to take away is that there is no &quot;Classification code&quot; defined, which in this instance is exactly what you expect as there is no employee assigned to the shift (the time at which the classification is worked out).</p>
+<p><img src="images/hd0025f.png" style="width:100%; max-width:840px;" alt="adhoc shift"></p>
+<p>&nbsp;</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Add employees to the adhoc shifts.<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">With the shifts un-allocated, click on the &quot;Ad-Hoc&quot; text, and then the &quot;Replace&quot; button - this will throw up the &quot;Replace Shifts&quot; dialog which allows you assign an employee to more than 1 shift at a time (for shifts showing along that selected line).</p>
+<p class="TutParagraph">In this example, we have carried this operation out twice - in the first instance allocating 4 of the shifts to one employee, and subsequently allocating the remaining 3 shifts to another employee.</p>
+<p class="TutParagraph"><img src="images/hd0025g.png" style="width:100%; max-width:515px;" alt="assign employees" /></p>
+<p class="TutParagraph">You can validate the shift costs by the usual double-click and check the Costs tab, howeve a more effective way to check multiple shifts is to run the pre-payroll report. Select the &quot;Pre Payroll Report&quot;, leaving all other items as auto-selected:</p>
+<p class="TutParagraph"><img src="images/hd0025h.png" style="width:100%; max-width:654px;" alt="pre-payroll report" /></p>
+<p class="TutParagraph">&nbsp;</p>
+<p class="TutParagraph">Produces a report which clearly shows that the pay rate is $28.00.</p>
+<p class="TutParagraph">&nbsp;</p>
+<p class="TutParagraph"><img src="images/hd0025i.png" style="width:100%; max-width:518px;" alt="pre-payroll report" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Verifying Employee details<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The final step is to verify that the employees themselves are on pay rates other than $28.00 / hour. And, in checking you can see that one employee was raised from $15.00 / hour to $28.00, and the other was dropped from a normal rate of $30.00 / hour back to $28.00.</p>
+<p class="TutParagraph">&nbsp;</p>
+<p class="TutParagraph"><img src="images/hd0025l.png" style="width:100%; max-width:301px;" alt="pay" />  <img src="images/hd0025m.png" style="width:100%; max-width:301px;" alt="pay rate" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">ALTERNATE approach to pay all shifts at $28.00<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Whilst the previous definition is the optimal manner in which to define on-going charges at a site, you may have occassion where you need to pay &amp;/or charge a specific rate for a day or short period.</p>
+<p class="TutParagraph">In the create ad-hoc shifts process, you have the ability to set the pay classification parameters for the shift. The set value will then be used to over-write the pay class of the employee assigned to the shift.</p>
+<ul>
+  <li>Open the scheduling workbench to the site at which you wish to create the adhoc shifts.</li>
+  <li>In the create adhoc shifts form - enter the classification that the shifts are to be paid at.</li>
+</ul>
+<p class="TutParagraph"><img src="images/hd0025c.png" style="width:100%; max-width:787px;" alt="adhoc shift"></p>
+<p class="TutParagraph">&nbsp;</p>
+<p class="TutParagraph">To verify that the shifts have been created as you expect, even before you assign an employee to the shift, open the shift and check the settings.</p>
+<ul>
+  <li>The image confirms the details of your adhoc shift create process.</li>
+</ul>
+<p class="TutParagraph"><img src="images/hd0025d.png" style="width:100%; max-width:844px;" alt="adhoc shift"></p>
+
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="index.html" class="sLocator">Home</a> > Helpdesk 
+<a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></strong></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="77%" valign="top"><p class="w2SubTitle2Blue">Introduction</p>
+<p class="TutParagraph">Customer has called indicating that the award interpreter is not correctly calculating weekend and public holiday rates, when shifts span between normal days and days requiring some form of loading.</p>
+</td>
+<td width="23%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p>
+<p align="center" class="TutParagraph">&nbsp;</p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The defined award interpreter for Melbourne Uni (example site), is not working correctly. The award as configured is below:</p>
+<p><img src="images/hd0020a.png" style="width:100%; max-width:489px;" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Let's check the Award Rule, and details of how shifts are being calculated under the current configuration so that we can talk through the award definition.</p>
+<p class="TutParagraph"><img src="images/hd0020b.png" style="width:100%; max-width:914px;" /></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 2 <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">To investigate how the current award interpreter is functioning, you need to create shifts to cover Mon-Sun, and Public Holidays. Note that November 1, 2011 - in Victoria (where the roster site is) is a Public Holiday.</p>
+<p class="TutParagraph"><img src="images/hd0020c.png" style="width:100%; max-width:858px;" /></p>
+<p class="TutParagraph">Employees DEMO &amp; DEMO/1 are of a classification  covered by this award as noted above (SMA-L4-P). <br />
+  Assign each one individually to the shifts, &amp; then  investigate the pay calculations.</p>
+<p class="TutParagraph"><img src="images/hd0020d.png" style="width:100%; max-width:849px;"></p>
+<p align="left">The pre-payroll report representing the award interpretation is <a href="images/hd0020a.pdf">attached</a> . <br />
+  Opening a shift on 01/11 to check Public Holiday loading, gives:</p>
+<p align="left"><img src="images/hd0020e.png" style="width:100%; max-width:667px;"></p>
+<p>&nbsp;</p>
+<p class="TutParagraph">Opening the shift via the Costs tab, shows:</p>
+<p><img src="images/hd0020f.png" style="width:100%; max-width:655px;">
+</p>
+<p class="TutParagraph">Refering back to the classification code definition, the Public Holiday is being paid at the correct rate. <br />
+  We'll now look at the Monday shift (18.00-06.00), which has 6 hours of Holiday rate:</p>
+<p class="TutParagraph"><img src="images/hd0020g.png" style="width:100%; max-width:513px;"> <img src="images/hd0020h.png" style="width:100%; max-width:521px;"></p>
+<p class="TutParagraph">The whole shift if being paid at Normal rate for the Monday, which is incorrect. <br />
+  A quick check of the Friday -> Saturday shift shows the same problem of incorrect calculations;</p>
+<p><img src="images/hd0020i.png" style="width:100%; max-width:511px;">
+</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 4 - Fix Public Holiday calculation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>Revisiting the Award Interpreter definition for Public Holiday, shows the  definition of a 'link code'.</p>
+<p>Unfortunately the &quot;P&quot; is (in this instance) a special character which cannot be used as a link code. It is one of a number of reserved letters (from easrly versions of PowerForce).</p>
+<p>Therefore, change the 'P' to 'PHL'.</p>
+<p><br />
+  <img src="images/hd0020j.png" style="width:100%; max-width:339px;" align="left"></p>
+<p>Checking the classification code, we'll make two changes to correct the calculations, as per the following images:</p>
+<p><img src="images/hd0020k.png" style="width:100%; max-width:475px;"></p>
+<p class="TutParagraph">The award has to change to include an &quot;N&quot; entry (Normal Hours), as the basis of any penalties is an addition atop of Normal hours. Hence the new entry looks like this:</p>
+<p class="TutParagraph"><img src="images/hd0020q.png" style="width:100%; max-width:337px;"></p>
+
+<p align="right"><a href="#topofpage">Top of Page</a> <br /><br /><br /><br /><br /><br /></p>
+<p class="w2SubTitleColor">Step 5 Verify Public Holiday Configuration<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The correct manner in setting up a modern award is to utilise the Penalties tab, as per the image below:<br>
+  What is being re-configured is the link code which says to pay a 'PHL' link (Public Holiday Loading). The fact that the link code and the actual allowance code are the same is not relevant (they are both simply codes).</p>
+<p class="TutParagraph"><img src="images/hd0020n.png" style="width:100%; max-width:557px;" /></p>
+<span class="TutParagraph">The Public Holiday is defined as a loading. It is a loading on Normal Hours, hence it has to be expressed as a percentage increase on normal hours. Note from the definition above of the award &quot;N PHL&quot;  the calculation will pay normal hours + public holiday loading.</span>
+
+<p class="TutParagraph">To clean up this pay class definition , remove all of the configuration from the front tab, as below:</p>
+<p class="TutParagraph"><img src="images/hd0020o.png" style="width:100%; max-width:460px;"></p>
+
+<p class="TutParagraph">Save the changes, and then check the calculation of the shift via the costs tab:</p>
+<p class="TutParagraph">We can see 12 hours of Normal Hours (100) at $22.56, and 6 hours of Public Hol Loading (PHL) at $46.34,, which is the value of the original PUBHOL entry,  expressed as a loading of 105.4078% atop of the 22.56 base rate.</p>
+<p class="TutParagraph">You get the 105.4078 via (46.34 - 22.56) / 22.56 * 100.0.</p>
+
+<p class="TutParagraph"><img src="images/hd0020p.png" style="width:100%; max-width:529px;"></p>
+<p class="TutParagraph">Checking the (09.00 - 17.00) shift for 01 Nov, firstly with the old AI configuration gives a total shift cost of $375.95.</p>
+<p class="TutParagraph"><img src="images/hd0020r.png" style="width:100%; max-width:518px;"></p>
+<p class="TutParagraph">and, then 'double-click' the display to re-calculate using the new AI definition gives $375.95 ( with the details of how the value is made up)</p>
+<p class="TutParagraph"><img src="images/hd0020s.png" style="width:100%; max-width:515px;"></p>
+
+<p class="TutParagraph">Let's double check the Tuesday 18.00 - 06.00 shift. Under the original Award definition the costs details are as per image below. The total shift csts is calculated as $561.31 as the whole 12 hours of the shift are costed at the Public Holiday day hourly rate.</p>
+<p class="TutParagraph"><img src="images/hd0020t.png" style="width:100%; max-width:518px;"></p>
+<p class="TutParagraph">Duble-click the display to re-cost the shift and you get a shift total of $418.63, where only 6 hours of the 18.00 - 00.00 on Tuesday are costed at the Public Holiday rate.</p>
+<p class="TutParagraph"><img src="images/hd0020u.png" style="width:100%; max-width:521px;"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 6 Setup Sat/Sun award configuration<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<span class="TutParagraph">Recalling the original configuration:</span>
+<p><img src="images/hd0020a.png" style="width:100%; max-width:489px;"></p>
+<span class="TutParagraph">
+The new complete Award Interpreter definition is:</span><p><img src="images/hd0020v.png" style="width:100%; max-width:912px;"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 7 <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The new pay (complete) classification definition is now :</p>
+<p><img src="images/hd0020w.png" style="width:100%; max-width:563px;"></p>
+<p>Checking the workings of the new configuration. Firstly check the Saturday 09.00- 17.00 shift, the before and after images:</p>
+<p><img src="images/hd0020w1.png" style="width:100%; max-width:515px;"></p>
+<p>&nbsp;</p>
+<p><img src="images/hd0020w2.png" style="width:100%; max-width:525px;"></p>
+<p>&nbsp;</p>
+<p>and the the 18.00 - 06.00 shift (which runs into Sunday):</p>
+<p><img src="images/hd0020w3.png" style="width:100%; max-width:524px;"></p>
+<p>&nbsp;</p>
+<p><img src="images/hd0020w4.png" style="width:100%; max-width:524px;"></p>
+<p>As is plain to see, the old award did not correctly cost the Sat running into Sun shift, and under estimated the cost of the shift, which will invariable give misleading figures for pre-payroll.</p>
+<p>&nbsp;</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 8 <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

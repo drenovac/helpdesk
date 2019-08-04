@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="90%" valign="top"><p class="w2SubTitle2Blue">Introduction</p>
+<p class="TutParagraph">As users have started to migrate off Windows XP onto Vista &amp; Windows 7, the new PC environments have not been correctly set up to reflect the environment being left behind, so many are having initial problems in printing.</p>
+</td>
+<td width="10%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p></td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>Having migrated to one of the current Windows Vista or Windows 7 releases, the new workstations are given access to the usual PowerForce shortcut on the server, and upon an initial attempt to print, users are being thrown the following warning message, and no printing coming through.</p>
+<p><img src="images/hd0014a.png" style="width:100%; max-width:350px;" alt="register ocx"></p>
+<p>If you want more information on what this is about click on the following <a href="http://en.wikipedia.org/wiki/Windows_Resource_Protection" class="TutLink">Windows Resource Protection</a>.</p>
+<p class="w2SubTitleColor">Cause<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">When PowerForce goes to print, it calls these two programs in the error message to do its printing. The first thing that happens is that Windows notices these two programs as not correctly configured on the new PC, and so it tries to configure the programs for you.</p>
+<p class="TutParagraph">However, your IT has configured that your PC login cannot do anything that involves administrative tasks such as any configuration. Therefore you receive the above messages.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Registering the components<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">To overcome the problem, you must raise your profile to that of Administrator, so that you may perform configuration changes to your PC. For each PC that uses PowerForce, you need to register two .dll files which relate to the printing.<br>
+                                  <br>
+                                You will find the files in the working directory of PowerForce on the server - (e.g. P:\OINSIGHT)</p>
+<p>&nbsp;</p>
+<p> Once you have found two files, you'll need to execute the following commands :<br>
+                                  <br>
+                                  Use<span class="TutLink"><a href="http://en.wikipedia.org/wiki/Regsvr32" class="TutLink">&nbsp;regsvr32.exe</a></span>&nbsp;to register the following 2 DLLs&nbsp;&nbsp;<br>
+           </p>
+<ul>
+                                  <li class="TutParagraph">vspdf.ocx (vspdf)</li>
+                                  <li class="TutParagraph">vsprint7.ocx (vsprint7)</li>
+           </ul>
+<p class="TutParagraph">The alternate way to achieve the same result is to start up your PowerForce session &quot;as Administrator&quot;, which hands off the registration to PowerForce. It's the same result, just two different paths to complete the task.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">DllRegisterServer in vspdf.ocx failed &amp; DLLRegisterServer in vsprint7.ocx failed.</p>
+<p class="TutParagraph">PowerForce like many other products use generic components to perform every day processes such as printing, and this message is saying that two routines (which have tried to auto register themselves) are unable to the registered in the user &quot;hive&quot;. Whilst this might be quite over the top for the average layman, it is a simple fact of how Windows software is developed and used.</p>
+<p class="TutParagraph">Your new PC has been &quot;dumbed&quot; down by IT, so that you the user cannot introduce viruses etc onto your PC, so you have go through the familiar Windows &quot;are you sure this is what you want to do&quot; mantra.</p>
+<pre>
+The issue is the client was not a local administrator. Using another account with admin to perform the task did not work in this instance.
+The fix was granting administrator privileges logging on as “Shane” registering the *.ocx files.
+Testing the reports
+Removing the permissions
+Logging off
+Logging on
+Then testing again.
+</pre>
+
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html" class="TutLink">PowerForce Controls</a></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="tut_0053.html" class="TutLink">Alternate article on registration problem</a></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="http://support.microsoft.com/kb/q249873/" class="TutLink">Explanation of regsvr32 usage &amp; error messages</a></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="http://support.microsoft.com/?id=207132" class="TutLink">How regsvr32 registers / unregisters COM dlls</a></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="http://technet.microsoft.com/en-us/library/bb490985.aspx" class="TutLink">The regsvr32 command</a></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Mon Mar 14, 2016</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

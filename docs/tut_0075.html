@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>Signon sheet upload is taking too long</h1>
+				  <p>Customer has called in that the upload of a 25 line signon sheet is taking too long</p>
+				  <p><img src="/2014/helpdesk/img/hd_75a.png" width="451" height="322" alt="signon sheet"></p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" --></div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+				  <h1><br>
+			      </h1>
+				  <hr>
+                  <h1>Introduction</h1>
+                  <p>For all intents and porposes the upload of 12 lines of data is taking an excessive amount of time. The process appears to be working as the status bar is progressing across the screen and the client knows the contents (below).</p>
+                  <p><img src="/2014/helpdesk/img/hd_75b.png" width="778" height="560" alt="excel sheet"></p>
+                  <p>This is indeed very frustrating that the system appears hung and non-responsive. So, helpdesk request a copy of the .csv file being uploaded.</p>
+                  <p>Upon investigation we find that the upload file is 16MB in size, which is more than you would expect for a 13 line .csv file (it's only text).<br>
+                  So we load it into excel, and indeed confirm that there are 13 lines of text to upload.</p>
+                  <p>However, we then execute a &quot;Ctrl End&quot; button to take us to the end of the .csv file and find the file to be 1,048,576 lines deep.<br>
+                    Clearly this is why the code is still running, it's processing each line to see if there's data there - and hence the excessive upload time.
+                  </p>
+                  <p><img src="/2014/helpdesk/img/hd_75c.png" width="279" height="125"></p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Additional Information</h1>
+                  <p>As a result of this issue, helpdesk is recoding the logic for upload to complete as soon as it locates two blank lines one after the other.<br>
+                  </p>
+                  <p>You can find further information on this process at &quot;<a href="/roster/pf_signon_import.html">signon sheet processing</a>&quot;</p>
+				</div>
+			</div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Saturday, Nov 29, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

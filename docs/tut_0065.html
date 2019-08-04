@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>Changing pay rates and Award Interpreter detail</h1>
+				  <p> This document outlines how you would make changes to an award and pay rates details. <br>
+			      In this example, both the award definition changes as well as the rate of pay.</p>
+              
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+                    <a href="tut_0061.html">Understanding Time &amp; Attendance</a>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+					
+					<h1>Overview - pay rate data</h1>
+				  <p>It's quite a straight forward process to create a new pay classification and / or create a new one.</p>
+				  <p>The simplest path whether chaging the pay rate or award details is to open the existing pay class (classification in Powerforce terms), as shown below. This represents a current classification - ensure that you select the last date in the sequence if the classification (pay class) already has a number of effective dates.</p>
+				  <p><img src="../2014/helpdesk/img/hd_65a.png" height="104" width="982"></p>
+				  <p>&nbsp;</p>
+				  <hr>
+                  <h1>Pay class duplication</h1>
+                  <p>In this instance, we're changing the pay rate effective of a future date to that shown above. <br>
+                  To complete the task, place your cursor in the effective date field (as shown below).<br>
+                  Enter the new effective date for the classification, and 'Tab' out of the field.</p>
+                  <p>You will be prompted by the message shown below (which is a clear indication that the duplication will work).<br>
+                    Confirm Yes to the prompt
+                  </p>
+                  <p><img src="../2014/helpdesk/img/hd_65b.png" height="226" width="490"></p>
+                  <p>Your new classification is now created, effective of the above date.<br>
+                  Nothing has changed from the previous details, and here is where you now may make any / all changes that the new classification requires.</p>
+                  <p><img src="../2014/helpdesk/img/hd_65c.png" height="241" width="478"></p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Changing the Award Interpreter rule</h1>
+                  <p>In this example, we are changing the details of the award interpreter from "VIC-CAS" to "VIC-CAS-14".</p>
+                  <p>As you can see from the two images below, the award has changes to the time of day span across the shift definition, and hence you would create a new Award Interpreter record, and link it to the now new classification.</p>
+                  <p><img src="../2014/helpdesk/img/hd_65d.png" height="200" width="912"></p>
+                  <p><img src="../2014/helpdesk/img/hd_65e.png" height="164" width="392"></p>
+                  <p>&nbsp;</p>
+                  <p>A reminder on the penalties tab of the classification code definition is where the link codes meet to make an impact.<br>
+                  And, in this new case where the VIC-CAS-14 award no longer has a PM1 link code, you may chose to remove it from the penalties tab to avoid confusion.<br>
+                  However, because there is no link code in the award interpreter, the actual loading will never be linked to in the execution of the award interpreter.
+                  </p>
+                  <p><img src="../2014/helpdesk/img/hd_65f.png" height="231" width="579"></p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p><img src="../2014/helpdesk/img/hd_65g.png" height="203" width="581"></p>
+                  <hr>
+                  <div>
+                    <h1>
+                      
+                        <p>Checking the pay class changes</p></h1>
+                    <p>Having made the changes, ensure to check your new award by creating some actual shifts in the new date period covering the time spans you wish to manage.</p>
+                                      
+                    
+                  </div>
+                  <hr>
+			  
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

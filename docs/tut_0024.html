@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="index.html" class="sLocator">Home</a> > Tutorials</p>
+<p><strong><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></strong></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="58%" valign="top"><p class="w2SubTitle2Blue">The client is not being billed at the rate we have set up. For our services we have a contract of $23.50 which has been entered into the client contract. However, when we go to the costs the rate chages to $25.00.</p></td>
+<td width="42%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Scheduling / Scheduling Workbench</a></p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor"><span class="TutParagraph">Introduction</span> <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+                <p><img src="images/hd0024a.png" style="width:100%; max-width:685px;" /></p>
+                <p>In the above 2 images, you can see that  issue as described. The client contract says $23.50, whereas the shift has been costed out at $25.00, and it's the $25.00 which is going out on the invoice.</p>
+
+<p class="w2SubTitleColor"><span class="TutParagraph">Explanation</span><img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>To understand how these things came about, we work backwards from the current 'wrong' answer:</p>
+<p>1. From the Costs tab of the edit shift window, tab to the first &quot;Times&quot; tab. Here you see that Powerforce has costed the shift as a &quot;D1&quot;, which is what's shown on the costs tab.</p>
+<p>&nbsp;</p>
+<p><img src="images/hd0024b.png" style="width:100%; max-width:526px;" /></p>
+<p>&nbsp;</p>
+<p>To undestand why, open the Client Contract for this site, and review the details on the casual charges tab.</p>
+<p>In the 1st image above, we see from the client contract that the client is on a 'FLAT' Fee Schedule. So, opening the fee schedule for 'FLAT', you see the image below. It uses only the codes shown here, not &quot;D5&quot;, as is the original configuration.</p>
+<p>So, what the system did was: In not finding a &quot;D1&quot; against the site, it defaulted to the system wide charge rate for D1.</p>
+<p><img src="images/hd0024c.png" style="width:100%; max-width:704px;" /></p>
+<p class="w2SubTitleColor"><span class="TutParagraph">Changing Charge Details</span><img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>To correct this problem, add a &quot;D1&quot; charge rate against the client.</p>
+<p><img src="images/hd0024d.png" style="width:100%; max-width:572px;" /></p>
+<p>We've left the D5, as it caused no harm, and to demonstrate the integration of any configuration required.</p>
+<p>Open, the shift with the incorrect calculation, goto the Costs tab, double click to force Powerforce to re-calculate the details, and you get:</p>
+<p><img src="images/hd0024e.png" style="width:100%; max-width:622px;" /></p>
+<p>&nbsp;</p>
+<p>Save, the entry, and re-process your invoicing.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor"><span class="TutParagraph">See Also</span> <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

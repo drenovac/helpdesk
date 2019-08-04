@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>QuickSuper Setup</h1>
+			    <p>This brief document outlines the coming update relating to superannuation processing via QuickSuper (QS).</p>
+                
+				  <p>To take advantage and be able to process your superannuation through QuickSuper you will need to setup these various piece of informaiton in Powerforce to enable the correct operation of QuickSuper extracts.</p>
+				  <p>As of 07/10/14 (date of this document), we expect to have completed testing and make available the new forms within 7 days for your own setup and testing. Your QS provider will have an ability to upload extracts and "not" actually process them to validate that all your data is clean and correctly setup.</p>
+				
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+				
+					<h1>Company Controls</h1>
+				  <p>Your Superannuation provider will have provided you a "QuickSuper Employer id" to be used to identify your data upload.<br>
+				  The company controls record has been enhanced with the two following fields:</p>
+				  <p>QuickSuper Employer id: as provided by your QS fund provider</p>
+				  <p>Pathname for QuickSuper export file: Enter a valid pathname where you wish the QS extract file to be stored.</p>
+				  <p>&nbsp;</p>
+				  <p><img src="../2014/helpdesk/img/hd_67a.png" alt="compnay controls" height="468" width="786"></p>
+				  <p>&nbsp;</p>
+                  <h1>Super Fund Details</h1>
+                    <p>For each fund defined in your system, for both company contributions and employee contributions you will need to provide </p>
+                    <p>Fund ID (QS) : Each superannuation fund has a unique Fund ID for processing within QS. You must enter each funds details in your super fund records.<br>
+                      The Fund ID is the minimum requirement - if you process a super run and a fund is missing the Fund ID, the whole run will fail until you provide a valid QS Fund ID.
+                    </p>
+                    <p><img src="../2014/helpdesk/img/hd_67b.png" alt="fund details" height="439" width="794"></p>
+                    <h1>Creating the QS extract</h1>
+                    <p>Finally, the superannuation processing that you have been using to date, has a new option</p>
+                    <p>You will set all your parameters as you have been doing to date<br>
+                    You will then run the extact as indicated to generate the QS extract file for online uploading to your superannuation provider</p>
+                    <p><img src="../2014/helpdesk/img/hd_67c.png" alt="superannuation processing" height="529" width="677"></p>
+	          
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

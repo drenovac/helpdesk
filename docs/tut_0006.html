@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Introduction</p>
+<p class="TutParagraph">All the shifts being created for full time employees are being calculated at the incorrect rate (mon - fri, weekends are Ok).</p>
+<p class="TutParagraph">The rate should be Ordinary hours, yet it's showing CAS as well as being the incorrect value.</p>
+</td>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Modules / Module Options</a></p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><strong class="TutParagraph">The details behind a shift edit are incorrect.</strong></p>
+<p><img src="images/hd00006a.png" style="width:100%; max-width:515px;" alt="roster edit"><br>
+           </p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">To resolve this issue, we first look at what the system has done with the shift at create time. We want to see what classification (pay class) the system has cast the shift at, as per:</p>
+<p class="TutParagraph"><img src="images/hd00006b.png" style="width:100%; max-width:451px;" alt="edit shift"></p>
+<p class="w2SubTitleColor"> Step 2<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><span class="TutParagraph">Using the above information, go to the classification codes window, to verify the award details, gives:</span>
+                <img src="images/hd00006c.png" style="width:100%; max-width:615px;" alt="class code"></p>
+<p>&nbsp;</p>
+<p class="TutParagraph">Note that the award rule is HGIA, and that the Normal Hours code is &quot;1&quot;.</p>
+<p class="TutParagraph">An interesting aside seen here is indicating that this shift is generally 8.5 hours, unless your employment type is &quot;CA&quot;, in which your normal base hours per day is 12.00. This configuration trick allows you do define the one payclass, and yet subtely change some details based upon the employment type.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor"> Step 3<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><img src="images/hd00006d.png" style="width:100%; max-width:919px;" alt="award code">
+           </p>
+<p><span class="TutParagraph">We are told that the shift is costing incorrectly Monday - Friday, and from the above we see a link code N+ORD. There is nothing else substantially important on this screen.</span>
+           </p>
+<p align="right"><span class="TutParagraph"><a href="#topofpage"></a></span><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor"> Step 4<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">In setting this system up, the client chose to use the visual indicator "+" to indicate that they are using the Extended Rates tab on the classification code, which is reflected here:
+</p>
+<p> <img src="images/hd00006e.png" style="width:100%; max-width:754px;" alt="extended tab">
+          </p>
+<p class="TutParagraph">On the classification code window, press the "Extended Rates" button.</p>
+<p class="TutParagraph">What you need to look for is the &quot;N+ORD&quot; link, and the only one found points correctly to the CAS 1.22, which is the value being calculated on the shift costs tab, confirming that PowerForce is doing as it's told.</p>
+<p class="TutParagraph">Recall that the Normal Rate on the classification above, is code &quot;1&quot;, which is not on this extend rates tab.</p>
+<p class="TutParagraph">So, let's create it. Move your cursor to where you wish to define the entry, press &quot;Insert&quot; on your keyboard.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor"> Step 5<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><img src="images/hd00006f.png" style="width:100%; max-width:520px;" alt="extended rate"></p>
+<p class="TutParagraph">Create a link code &quot;N+ORD&quot; (that's what's in the Award Interpreter, Emp Type of &quot;FT&quot; and an Earning Code of &quot;1&quot;, to list out as &quot;ORD 1.00&quot; at a rate of 17.6304.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor"> Step 6<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><img src="images/hd00006g.png" style="width:100%; max-width:507px;" alt="edit shift"></p>
+<p class="TutParagraph">Go back to our original edit costs tab on the shift, double click to force and re-cost, and here's the new correct value.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Summary<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The above are indicative of the generic process that tech support use to confirm any customer related enquiries.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

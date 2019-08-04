@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>Employee not being paid correct site rate</h1>
+				  <p>Employee  0256 Mark Bubbles worked at a site Pink Ribbon Fore Court which is a level 3  site but has only paid him level 1.&nbsp; The site was recently changed to  level 3 and all steps as given by helpdesk where followed.</p>
+<p>&nbsp;</p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" --></div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+				  <h1><br>
+			      </h1>
+				  <hr>
+                  <h1>Introduction</h1>
+                  
+                  <ul>
+                    <li>Because the customer has clearly indicated where the issue stems from, we can go and verify the information in reverse.<br>
+                      Confirm that this site is indeed meant to pay CA-L3 CAS </li>
+                  </ul>
+                  <p><br>
+                    <img src="/2014/helpdesk/img/hd_77a.png" width="577" height="130">                  </p>
+                  <ul>
+                    <li>Then we'll look at a sample roster that is indicated as being incorrect<br>
+                      Open the scheduling workbench to the 'site' because it's at the site that the information is incorrect
+                    </li>
+                  </ul>
+                  <p><img src="/2014/helpdesk/img/hd_77b.png" width="893" height="239"></p>
+                  <p>Double-click on the shift to open it, confirms the 2nd part of the issue in that the payroll has been run against this schedule and manual changes have had to be made. The message is detailing where this shift has been paid.</p>
+                  <p><img src="/2014/helpdesk/img/hd_77c.png" width="502" height="193"></p>
+                  <p>Double-clicking brings up the 1st tab of the Bookings window and experience in the application leads us to check the marked area first.</p>
+                  <ul>
+                    <li>You can see that the system is saying the &quot;Classification Code&quot; should be CA-L3 CAS,<br>
+                      However, the Description does not match that classification (years of experience with the product) - alerts us to the general direction of the error.
+                    </li>
+                  </ul>
+                  <p>&nbsp;</p>
+                  <p><img src="/2014/helpdesk/img/hd_77d.png" width="667" height="293"></p>
+                  <p>Opening the costs tab, we see the pay class rate for level 1 - the employee's default pay class (this is the incorrect value)</p>
+                  <p><img src="/2014/helpdesk/img/hd_77e.png" width="650" height="126"></p>
+                  <ul>
+                    <li>To see whether the Award Interpreter (AI) has a change of mind, double-click anywhere inside this tab causes a re-calculation which brings up the correct CA-L3 rate<br>
+                      So, what has gone on to cause this error</li>
+                  </ul>
+                  <p>&nbsp;</p>
+                  <p><img src="/2014/helpdesk/img/hd_77f.png" width="656" height="126"></p>
+                  <ul>
+                    <li>The final place to check what's gone on is the &quot;Audit tab&quot;, and here we see<br>
+                      That the shift was originally created on &quot;26/11/14&quot;<br>
+                      Now, the customer has indicated clearly in the error that there were rate changes &quot;recently&quot; (in Dec in fact)</li>
+                    <li>So, the cause is, is that the shifts appear to have been created in advance<br>
+                      The customer has then made award changes linked to the site, meaning that the pay rates are intended to change to something specific
+                    </li>
+                  </ul>
+                  <p>&nbsp;</p>
+                  <p><img src="/2014/helpdesk/img/hd_77g.png" width="660" height="294"></p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Resolution</h1>
+                  <ul>
+                    <li>The resolution to this particular scenario is that having changed either pay class (as in this case) or fee rate values to existing shifts in the system, it remains to the user to decide to re-cost all future shifts to correct the AI calculations</li>
+                    <li><br>
+                      Since this is a regular occurrence in Powerforce, the tools to do so are found under &quot;Tools / Recost Work Schedules&quot; of the main MDI.</li>
+                  </ul>
+                  <p>&nbsp;</p>
+			  </div></div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Tuesday, Dec 09, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

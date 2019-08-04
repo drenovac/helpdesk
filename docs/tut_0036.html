@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="index.html" class="sLocator">Home</a> > Helpdesk 
+<a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></strong></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="77%" valign="top"><p class="TutParagraph">A customer is reporting that the application is not correctly calculating Superannuation payments on shift loadings. The company superannuation contribution is printed on employee payslips and employees have asked why superannuation is not being paid on their shift loadings and Saturday work.</p></td>
+<td width="23%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p>
+<p align="center" class="TutParagraph">&nbsp;</p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Introduction <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>As with all problem resolutions we start at a shift which is a candidate to the reported problem.</p>
+<p><img src="images/hd_0036.png" style="width:100%; max-width:594px;" alt="edit shift" /></p>
+<p>&nbsp;</p>
+<p class="w2SubTitleColor">Check the shift details<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The image above is saying that this particular shift is made up of 6 normal hours (100) + 6 hours of Saturday loading (SAT).</p>
+<p class="TutParagraph">To check the particulars of 'Hour Types' use System Codes / Payroll / Earning Codes'.</p>
+<p class="TutParagraph">Looking at code 100, we find the following detail, specifically that in the inclusions &quot;Superannuation&quot; is checked. This tells the system to use these types of hours in the calculation of Superannuation.</p>
+<p class="TutParagraph"><img src="images/hd_0036a.png" style="width:100%; max-width:579px;" alt="earning code" /></p>
+<p class="TutParagraph">&nbsp;</p>
+<p class="w2SubTitleColor">Verify the shift loadings<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>The same process for SAT (which is an allowance of type 'Loading') shows the following image. The important thing to take away is that these types of hours &quot;SAT&quot; are NOT to be included in the Superannuation calculation. Therefore to correct the reported original issue, check the &quot;Superannuation&quot; check box and this loading will subsequently be used in the calculation of dollar amounts for Superannuation.</p>
+<p><img src="images/hd_0036b.png" style="width:100%; max-width:719px;" alt="shift loading" /></p>
+<p>The type loading means : take the normal hours value &amp; load it up by some factor, and that's how you get a higher value for a Saturday shift.</p>
+<p>&nbsp;</p>
+<p class="w2SubTitleColor">Summary<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">_</p>
+<p align="right">&nbsp;</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

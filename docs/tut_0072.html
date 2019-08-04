@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>New function - creating HO admin system</h1>
+				  <p> This document details setting up a 2nd copy of Powerforce to manage Staff related payroll</p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" -->
+				</div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+					<h1>Overview</h1>
+				  <p>The client has requested an ability to run Admin payroll through Powerforce.</p>
+				  <p>The general mode that we would implement this in is to create an 'ADMIN' company and allow users to select the company on login.<br>
+			      In this instance the customer wanted very, very secure access, therefore we took a different approach as outlined in this document.<hr>
+                  <p>To be certain of absolute access control, it's optimal to return the access control back to the Operating System.
+  </p>
+                    <br>
+                    To that effect, we create a copy of the current production environment for Powerforce.<br>
+                    User access control into Powerforce can be managed through Powerforce, however company IT can ensure that only the correct individuals have access to the application in the first place.</p>
+                  <p><img src="/2014/helpdesk/img/hd_72a.png" width="776" height="372" alt="powerforce shortcuts"></p><hr>
+                  <h1>Administrative Setup</h1>
+                  <p>The nature of the setup is that the production data resides within the &quot;HO&quot; directory structure and as such the Operating system administrators can control file access restrictions to only authorised system logins.</p>
+				</div>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Wednesday, Nov 05, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

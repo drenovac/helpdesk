@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				
+				<h1>Subtle T&amp;A problem</h1>
+				  <p> This brief document outlines a subtle issue with the renaming of Windows files with a suffix that is auto-hidden by Windows by default.</p>
+				  <p>In this particular instance, the client is experiencing issues with running the T&amp;A import process - the particular problem being that nothing is picked up by the data import.</p>
+              
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+                    <a href="tut_0061.html">Understanding Time &amp; Attendance</a>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+					
+					<h1>Overview - timeclock export input data</h1>
+				  <p>The first item to check for T&amp;A upload is the input data and file. Reviewing the details of the configuration as shown in the next data element (below), we'll check the input data.<br>
+				    The following image (in DOS format), shows the input file as "acs_tna.csv.csv", you'll notice from the configuration in the next data element (below) indicates a file named "acs_tna.csv"
+				  </p>
+				  <p><img src="../2014/helpdesk/img/hd_63a.png" alt="dos data" height="206" width="615"></p>
+				  <p>Therefore, the issue appears to be a simple one of correctly renaming the input file to "acs_tna.csv" (remove the extraneous .csv suffix).</p>
+				  <p><strong>Please refer to the last note in this article</strong> on how / why Windows behaves as it does, and how to correctly set the file-name. And, t<br>
+				    T
+			      o re-iterate the confusion, the following image may lead you to believe that the file name is named correctly, however this is due to your personal settings which hide the 'suffix'. We leave this for your own edification via google.</p>
+				  <p><img src="../2014/helpdesk/img/hd_63d.png" alt="windows dir" height="115" width="620"></p>
+                  <hr>
+                  <h1>Powerforce T&amp;A configuration to match</h1>
+                  <p>The below configuration represents the layout of the timeclock data above, with each field being described as 'positional' within the single line.                  </p>
+                  <p><img src="../2014/helpdesk/img/hd_61b.png" alt="T&amp;A configuration" height="509" width="389"></p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Timeclock data - data content</h1>
+                  <p>As we've commenced to show in the 1st image above, you'll notice that we're opening the file using notepad, to review the data content.</p>
+                  <p>Note from the file date, that the date of the writing of this helpdesk ticket is 17th June. And, we'll need to review the input data prior to uploading. The first few lines relate to time clocking data relating to 23/05/2014, which is some 4 weeks prior to the period that this document is being written within.</p>
+                  <p><img src="../2014/helpdesk/img/hd_63b.png" alt="t&amp;a data input" height="111" width="457"></p>
+                  <p>fast-forward to the end of the file, confirms : <img src="../2014/helpdesk/img/hd_63c.png" alt="t&amp;a import data" height="170" width="458"></p>
+                  <p>The last part of the file is clearly of the time period representative of the date of this documents creation.</p>
+                  <p>Therefore, we would advise that you clean up the file to represent the time clocking data relating to the period that you wish to load data for.</p>
+                  <hr>
+                  <div>
+                    <h1>
+                      <div>Show or hide file name extensions</div>
+                    </h1>
+                    <div data-number-of-tabs-displayed="2">
+                      <div role="tablist"></div>
+                    </div>
+                  </div>
+                  <hr>
+                  <div>
+                    <div>
+                      <div id="show-hide-file-name-extensionswindows-7" role="tabpanel" aria-hidden="false" data-tab-id="windows-7">
+                        <div ms.exid="render" ms.cid="3294" ms.cver="87">
+                          <div>
+                            <div>
+                              <p>A file name extension is a set of characters added to the end of a file name that determine which program should open it. </p>
+                              <p>For more information, see&nbsp;<a href="http://windows.microsoft.com/en-au/windows7/file-names-and-file-name-extensions-frequently-asked-questions" data-id="pageContainer0_ID0EBFBA">File names and file name extensions: frequently asked questions</a>.</p>
+                              <p>Windows hides file name extensions, but you can choose to make them visible.</p>
+                              <div>
+                                <h3>To show or hide file name extensions</h3>
+                                <div>
+                                  <ol>
+                                    <li>
+                                      <p>Open Folder Options by clicking the&nbsp;Start&nbsp;button&nbsp;<img src="../2014/helpdesk/img/windows_start.jpg" alt="Picture of the Start button" data-id="pageContainer0_ID0EHBBDBBA">, clicking&nbsp;Control Panel, clicking&nbsp;Appearance and Personalization, and then clicking&nbsp;Folder Options.</p>
+                                    </li>
+                                    <li>
+                                      <p>Click the&nbsp;View&nbsp;tab, and then, under&nbsp;Advanced settings, do one of the following:</p>
+                                      <ul>
+                                        <li>
+                                          <p>To show file name extensions, clear the&nbsp;Hide extensions for known file types&nbsp;check box, and then click&nbsp;<strong>OK</strong>.</p>
+                                        </li>
+                                        <li>
+                                          <p>To hide file name extensions, select the&nbsp;Hide extensions for known file types&nbsp;check box, and then click&nbsp;<strong>OK</strong>.</p>
+                                        </li>
+                                      </ul>
+                                    </li>
+                                  </ol>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p>Click on the following link :<a href="http://www.sevenforums.com/tutorials/10570-file-extensions-hide-show.html">External link to showing file extensions</a> for further details on showing actual file extensions.</p>
+                  <hr>
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

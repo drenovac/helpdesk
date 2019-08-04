@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../pre2013/helpdesk/index.html" class="sLocator">Home</a></p>
+
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="94%" valign="top"><p class="TutParagraph">A customer has requested that the  printing of licence expiry notices is removed from the paylip.</p></td>
+<td width="6%" valign="top"><p class="w2SubTitle2Blue">&nbsp;</p>
+<p align="center" class="TutParagraph">&nbsp;</p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Introduction <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p>This request goes against the grain of Powerforce payroll processing, however - we have created a company specific control to allow the override of this system centric functionalty..</p>
+<p class="w2SubTitleColor">The Company Controls<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">In the company controls screen, Default Options tab, check the indicated checkbox to select this option.</p>
+<p class="TutParagraph">The setting is company specific, therefore if you have a multi-company setup you must configure this option for each company where you require this functionality.</p>
+<p class="TutParagraph"><img src="../pre2013/helpdesk/images/hd_0029.png" style="width:100%; max-width:673px;" alt="licence expiry" /></p>
+<p class="TutParagraph">The option has only been implemented in two (2) payslip formats, and will not be supported in any other. These are :</p>
+<ul>
+  <li>Format 2D - Detailed (new)</li>
+  <li>Email format payslip</li>
+</ul>
+<p class="w2SubTitleColor">Implementation (internal use)<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The control element is in [T] COMPANY_CTRL, element &lt;44&gt;, which is not in use in any part of the system. The original field is called &quot;BILLING_MODULE_START_DATE&quot;, not in use anywhere.</p>
+<p class="TutParagraph">The [W] COMPANY_CONTROLS checkbox above has been linked to this field with an over-ride to the field as Boolean.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="../admin/pf_co_controls.html">Company Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

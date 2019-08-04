@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+   	  <div class="col-sm-7 col-sm-offset-1">
+		<h1>Overview</h1>
+			    <p>In the example below  the public holiday loading is not showing.  I’ve   gone through and had a  look and it appears that it’s not picking up the   loading on the CLEAN  classification</p>
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+				<h1>Explanation</h1>
+                Using the scheduling workbench, locate and open the shift. Confirm on the times tab that the classification is CLEAN, then check the "Costs" tab, and indeed there is no PHOL (Public Holiday) loading.
+                
+                <p><img src="../2013/helpdesk/img/hd_0043b.png" alt="costs tab" height="97" width="460"></p>
+                <p>Check the calendar to confirm that the date 28/01/13 is indeed marked as a public holiday, and in this example it is. </p>
+                <p>Check the details of the classification code, verify the award interpreter definitions. Verify as per the marking below that on the Public Holiday column, that you are paying "N"ormal hours &amp; "PHL" (link) loading. </p>
+                <p><img src="../2013/helpdesk/img/hd_0043c.png" alt="award links" height="165" width="912"></p>
+                <hr>
+                <p><br>
+                </p>
+                <hr>
+                <p>Open the Penalties tab of the classification, and firstly check the lower section where the PHL (link from the Award Interpreter) is correctly stating to apply an Allowance "PHL" at 37.1429 loading atop of the normal hours. So, that is correct.</p>
+                <p>However, as the arrow indicates - the classification does not "Pay Public Holiday" and hence this is the reason why no public holiday loading is being applied.</p>
+                <p>Check the "Pay Public Holiday" checkbox and re-cost the shift and you will have the award working as expected.</p>
+                <p><img src="../2013/helpdesk/img/hd_0043a.png" alt="pay class" height="344" width="936"></p>
+                <p>&nbsp;</p>
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

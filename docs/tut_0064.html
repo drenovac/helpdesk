@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				
+				<h1>Resolving incorrect allowance rates</h1>
+				  <p> This document outlines how you would reconcile why / how a shift pay rate is calculated.</p>
+              
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+                    <a href="tut_0061.html">Understanding Time &amp; Attendance</a>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+					
+					<h1>Overview - payslip data</h1>
+				  <p>The pay calculations as they appear on the payslip and manual corrections. The issue is that Powerforce is costing the allowances at incorrect rates.</p>
+				  <p><img src="../2014/helpdesk/img/hd_64a.png" alt="pay slip" height="506" width="664"></p>
+				  <p>In this particular setup, the pay classes are driven by the role type of the shift, which in turn selects the correct pay rate.</p>
+				  <p><img src="../2014/helpdesk/img/hd_64b.png" alt="shifts" height="87" width="574"></p>
+				  <p>Flicking the 'View' to role type gives a quick glance of what  roles were worked . This helps to give us a quick track to what pay classes we may need to investigate to resolve the issue.</p>
+				  <p><img src="../2014/helpdesk/img/hd_64c.png" alt="shifts" height="90" width="558"></p>
+				  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Powerforce pay classes</h1>
+                  <p>Opening the first shift of Wed 07th, shows the allowance for .75 hour (45 mins), paid at $0.4700.</p>
+                  <p>This value is calculated from the classification codes, against the line VPM (set by the award interpreter), as 2.1500% of the base hourly rate of $21.8600. It is a 'rate' becuase the Unit column below shows a "Loading".                  </p>
+                  <p><img src="../2014/helpdesk/img/hd_64d.png" alt="pay rates" height="368" width="634"></p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Correcting the allowance rate</h1>
+                  <p>Having resolved that the value is incorrect, the correct value is calculated out as:</p>
+                  <ul>
+                    <ul>
+                      <li>(allowance / base rate) * 100%.</li>
+                      <li>In this particular example of 2 shifts which are incorrect, and that both the CA and FW pay rates and allowances are the same, we have made the following changes to the FW classification based on the correct allowance rates.</li>
+                    </ul>
+                    <p>The VPM line has changed to 1.4629 and the VPM1 to 8.4629%.</p>
+                    <p><img src="../2014/helpdesk/img/hd_64e.png" alt="pay class" height="216" width="555"></p>
+                  </ul>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <div>
+                    <h1>
+                      
+                        <p>Checking the pay class changes</p></h1>
+                    <p>Having made the corrections to the FW class, we'll look at the FW shift which co-incidetally has both a VPM and VPM1 calculation. </p>
+                    <p>The 2 images below represent the current and incorrect pay class details. Remembering that a change to the classification codes does not translate into a re-cost of the schedules to those shifts that have already been costed previously. </p>
+                    <p>However, in this instance we wish to force a re-cost, so we will open the shift, select the Costs tab, and 'double-click' inside the grid to co-exerce the system into a re-cost.</p>
+                    <p>The second images shows the results of the re-cost, which are the correct allowance values.</p>
+                    <p><img src="../2014/helpdesk/img/hd_64f.png" alt="pay class corrections" height="419" width="626"></p>
+                                          
+                    
+                  </div>
+                  <hr>
+			  
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

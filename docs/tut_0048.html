@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				<h1>Overview</h1>
+				  <p>I have attempted several times to upload images to individual guards profiles in powerforce and I have not had any success; can you please assist?</p>
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+                <h1>Explanation</h1>
+                <p>The configuration of the images directory for your employees (on a per company basis), is managed via the "Company System Defaults" settings.</p>
+                <p><img src="../2013/admin/img/photos_a.png" alt="employee gallery" height="467" width="771"></p>
+                <hr>
+                <p>What you notice in the above configuration is that both the employee and client gallery locations point to the same sub-directory (looks like client gallery in this instance).</p>
+                <p>Changing the 'cgallery' to 'gallery' (or the absolute location of where you store your photo images), in the Personel Gallery position will correct the issue.<br>
+                </p>
+                <hr>
+                <p>A quick confirmation with the gallery button of the employee details screen confirms that the location is now correctly set up.</p>
+                <p><img src="../2013/admin/img/photos_b.png" alt="photo images" height="502" width="789"></p>
+                <hr>
+                <p>&nbsp;</p><br>
+                Many clients are going through the transition of migrating to our current 'new' version of Powerforce (version 8), and the configuration for the version 8 is just slightly different.
+                Version 8 Powerforce sits at the same directory level as your current production version, with version 8 pointing back into the current version for data and all other settings. Therefore, the configuration of the Personnel Gallery is just slightly different, as shown below:
+                
+                <p>&nbsp;</p>
+                <p>The directory reference is over to the "\oinsight\" directory of your current release.</p>
+                <p><img src="../2013/admin/img/photos_c.png" alt="photo iamges" height="360" width="620"></p>
+                
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

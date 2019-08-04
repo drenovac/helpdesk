@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>Having to edit pay - won't pick up site rate</h1>
+				  <p>Customer is reporting that they're having to manually override pay rates when employees work at specific site, because the system is not calculating it automatically.</p>
+				  <p><img src="/2014/helpdesk/img/hd_73a.png" width="783" height="159" alt="pay rate"></p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" -->
+				</div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+					<h1>Overview</h1>
+				  <p>The client / employee rate override is configured through the 'client operations' screen.</p>
+				  <p><img src="/2014/helpdesk/img/hd_73b.png" width="647" height="198" alt="override rate"></p>
+				  <p>and, you will need to confirm the 'grade' of the employee's classification (below)</p>
+				  <p><img src="/2014/helpdesk/img/hd_73c.png" width="435" height="150" alt="pay class grade"></p>
+				  <p>and, you will need to verify the employment type for the employee, which in this case is &quot;FULLTIME&quot; (below)</p>
+				  <p><img src="/2014/helpdesk/img/hd_73d.png" width="269" height="379" alt="employment type"><br>
+			      </p>
+				  <hr>
+                  <h1>Resolution</h1>
+                  <p>In this instance a couple of items are not configured correctly &amp; subsequently causing the percieved issue.</p>
+                  <ul>
+                    <li>The employee is 'fulltime' and therefore you must configure the opposite side of the &quot;Auto Classification&quot; for the site<br>
+                      The employee pay class 'grade' is 1, not &quot;CA-L1 M-S PPT&quot; (this is the pay class id)</li>
+                  </ul>
+                  <p>&nbsp;</p><hr>
+                  <h1>Additional Information</h1>
+                  <p>You may find the following two items of use in setting up this relationship correctly:</p>
+                  <ul>
+                    <li><a href="http://www.rosterme.com.au/helpdesk/tut_0038.html">Site specific classification (worked example)</a></li>
+                    <li><a href="http://www.rosterme.com.au/helpdesk/tut_0025.html">Site specific rates</a></li>
+                  </ul>
+				</div>
+			</div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Monday, Nov 17, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

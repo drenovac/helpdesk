@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>Overview</h1>
+				  <p>The following document outlines the application of a software patch to Powerforce. A software update may be applied in two modes</p>
+				  <ul>
+				    <li>Software patch (this document)</li>
+				    <li>Running a patch.exe update - run the patch.exe file against your production system (having backed up prior).</li>
+		        </ul>
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+                
+                <h2>Explanation</h2><br>
+                <p>Powerforce is developed atop a non-SQL application environment called Openinsight by Revelation Technology (USA). The environment is an interpreted programming language, which means that the code does not exist in the form of .dll or .ocx files. The code for the environment and Powerforce is kept in a suite of files represented as *.ov and *.lk files under Windows. </p>
+                <p>In order to provide a backup environment for the purposes of restoring to a prior version of the "application software", the *.ov &amp; *.lk files within your "OINSIGHT" must be backed up. There is no need to backup more than the *.ov &amp; *.lk files.</p>
+                <p>Having backed up your current environment, apply the necessary software patch.                    </p>
+                <p>&nbsp;</p>
+                <hr>
+                <p>In the example documented here, the Powerforce application has 2 parts, the Production environment maintained inside the "PForce32" directory and its test environment in "PFtest".				  </p>
+                <p><img src="../2013/helpdesk/img/hd_0049.png" alt="dos dir" height="309" width="530"></p>
+                <p>Software updates by Powerforce Software are copied into the sub-directory "Patches", where each patch is held in a further sub-directory.<br>
+                The patches themselves are in 
+                </p>
+                <p><img src="../2013/helpdesk/img/hd_0049a.png" height="259" width="547"><br>
+                </p>
+                <hr>
+                <h2>Backing up Current Application</h2><br>
+                <p><img src="../2013/helpdesk/img/hd_0049b.png" height="122" width="447"></p>
+                <p>The quickest and most simplest backup is to:</p>
+                <ul>
+                  <li>create a sub-directory under your OINSIGHT directory. In the image above, we have created the sub-directory mpd_130415 (15th April 2013, the date of the backup)</li>
+                  <li>copy the original oinsight\*.lk and oinsight\*.ov files into the sub-directory.</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p>If using DOS, you would execute the following:</p>
+                <ul>
+                  <li>mkdir mpd_130415</li>
+                  <li>cd mpd_130415</li>
+                  <li>copy ..\*.ov</li>
+                  <li>copy ..\*.lk</li>
+                  <li>del rev30010.?? - the two files rev30010.lk and rev30010.ov are a 'temp' file and generally very large, therefore unnecessary for the backup</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p>Having created your backup, startup Powerforce and navigate to the option as shown below.</p>
+                <p><img src="../2013/helpdesk/img/hd_0049c.png" height="325" width="774"></p>
+                <hr>
+                <h2>Applying the patch</h2>
+                <p>&nbsp;</p>
+                <p>To apply the software patch, you have to set the "Upgrade Location" to the directory directed by Powerforce.</p>
+                <p>The full path below is to:<strong> D:\CORPORATE APPLICATIONS\POWERFORCE\PATCHES\130416</strong></p>
+                <br>
+                <p><img src="../2013/helpdesk/img/hd_0049d.png" height="296" width="502"></p>
+                <p>&nbsp;</p>
+                <hr>
+                <h2>Reverting to a prior version of Powerforce</h2>
+                <p><br>
+                To revert to a prior version of Powerforce, all that is required is to copy "back" the *.ov &amp; *.lk files from the sub-directory into which you have made the backup (as in the above example). </p>
+                <p>To execute the copy, you must ensure that all users are logged out of Powerforce, as the copy will report file in use errors, and the process cannot be guaranteed to have worked.</p>
+                <hr>
+                <p>&nbsp;</p>
+                <hr>
+                <p>&nbsp;</p>
+                <hr>
+		      
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

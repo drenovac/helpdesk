@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>Employee is not being paid more than 14 hours / shift</h1>
+				  <p>Employee  0486 Johnny Cash- as you can see by his payslip on the 4 and 5/12 he worked  14.5 hours however, it paid him for only 14 hours each day, we are at a loss to  understand why the system did that. &nbsp;(We have had a few of those recently  with other staff)</p>
+<p>&nbsp;</p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" --></div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+				  <h1><br>
+			      </h1>
+				  <hr>
+                  <h1>Introduction</h1>
+                  
+                 
+                  <p>To resolve this, we'll go straight to the employee rates details to confirm his pay class (classification code)</p>
+                  <p><img src="/2014/helpdesk/img/hd_78a.png" width="479" height="285"></p>
+                  <p>The employee is on CA-L1 CAS - the 14 base hours is indicating the level at which other considerations such as overtime kick in.<br>
+                    So, the next step is to open the Award Rule
+                  </p>
+                  <p><img src="/2014/helpdesk/img/hd_78b.png" width="433" height="171"></p>
+                  <p>The award rule as defined below does nothing with any hours post the base hours in the day - and hence the reason why the payments max out at 14.00</p>
+                  <p><img src="/2014/helpdesk/img/hd_78c.png" width="960" height="398"></p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <hr>
+                  <h1>Resolution</h1>
+                  
+                  <p>Depending up how you actually wish to deal with this, you have 2 options</p>
+                  <ul>
+                    <li>Change the award rule to do something with the hours over 14 </li>
+                    <li>Change the base hours per shift to 23 - which will then pay up to 23 hours per day without further reference to the award rule.</li>
+                  </ul>
+              </div></div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Tuesday, Dec 09, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

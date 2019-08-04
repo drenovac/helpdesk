@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Introduction
+                  </p>
+<p class="TutParagraph">In our last pay run numbered V-140 three employees as  listed above worked more than 76 hours but were not paid overtime &ndash; the system  paid them a flat rate for all their hours.&nbsp; They are supposed to be paid  overtime once they have completed 76 hours.</p>
+<p class="TutParagraph">The fourth employee V-148 Bud is paid overtime  on a daily basis once he has done 7.6 hours, and not after he has worked 76  hours.</p>
+<p class="TutParagraph">Can you please explain why and provide a solution so  we can rectify this.</p>
+</td>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Modules / Module Options</a></p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p><strong>SITE: V-73 CENTRAL    UNIVERSITY</strong> 
+                  employees:<br>
+             </p>
+<blockquote>
+                  <p class="TutParagraph">V-134 FLORI  - NO OVERTIME PAID<br>
+                    V-161 PATRICIA - NO OVERTIME PAID<br>
+                    V-163 GEORGE  - NO OVERTIME PAID<br>
+                    V-148 BUD &ndash; OVERTIME PAID DAILY</p>
+</blockquote>
+                <p class="TutParagraph">In our last pay run numbered V-140 three employees as  listed above worked more than 76 hours but were not paid overtime &ndash; the system  paid them a flat rate for all their hours.&nbsp; They are supposed to be paid  overtime once they have completed 76 hours.</p>
+<p class="TutParagraph">The fourth employee V-148 Bud is paid overtime  on a daily basis once he has done 7.6 hours, and not after he has worked 76  hours..</p>
+<p class="TutParagraph">Can you please explain why and provide a solution so  we can rectify this.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">For each of your employees, using the details on the payroll workbench confirm that the employees did indeed have more than 76 normal hours.</p>
+<p class="TutParagraph"><img src="images/hd00002a.png" style="width:100%; max-width:493px;" alt="payroll workbench"></p>
+<p class="TutParagraph">For each of your employees, using the Personnel Rates screen confirm their employment type. In this instance there were two employment types across the employees noted: PERM &amp; PERM/PTIME.</p>
+<p class="TutParagraph">For each employment type confirm that the employment type has a 76 hour rule defined, using <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Payroll / Parameters / Employment Types</a></p>
+<p class="TutParagraph"><img src="images/hd00002f.png" style="width:100%; max-width:522px;" alt="employment type"></p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<a name="castovertime"></a>
+<p class="w2SubTitleColor">Casting overtime (manually)<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Select any one employee to confirm that the system is calculating the overtime rule:</p>
+<p class="TutParagraph">Using to the Scheduling Workbench</p>
+<blockquote>
+                                  <p class="TutParagraph">Set the Week Ending date to the week ending date of the payroll (V-140) that the employee is included in.</p>
+<p class="TutParagraph">Change the Period View to 14 days</p>
+<p class="TutParagraph">Expand the Scheduling Workbench, so that you see the whole 14 days in one wide window</p>
+<p class="TutParagraph">Select the employee on the LHS of the screen</p>
+<p class="TutParagraph">Double click on the employee to get the following screen : <img src="images/hd00002g.png" style="width:100%; max-width:345px;" alt="scheduling options"></p>
+<p class="TutParagraph">Double click Calculate Overtime</p>
+</blockquote>
+                                <p class="TutParagraph"><img src="images/hd00002b.png" style="width:100%; max-width:994px;" alt="scheduling workbench"></p>
+<span class="TutParagraph">The system will calculate the overtime and as you see in the image above, it has split the overtime at 76 hours.</span>
+                                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 3<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Looking at the above analysis, we can see that the overtime will be cast into the last shift of the fortnight, so selecting the last shift (the system will inform you that the shift has been paid &amp; no changes are allowed - press OK to continue) in the fortnight and editing the costs tab, presents the following:</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"></table>
+<p><img src="images/hd00002d.png" style="width:100%; max-width:501px;" alt="shift details"></p>
+<p class="TutParagraph">The  shift itself is 9.0 hours long, and the detail above notes, that the first 2.00 hours are at Time 1/2 and the balance of 3.75 hours is at Double Time.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 4<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Double click inside the shift to recost it (as a standalone shift), shows you the details of the shift prior to casting of overtime.</p>
+<p class="TutParagraph"><img src="images/hd00002c.png" style="width:100%; max-width:500px;" alt="shift costs"></p>
+<span class="TutParagraph">You can see the clear difference of the whole shift of 9.0 hours at Normal Hours.</span>
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">The cast overtime process <a href="../general/pf_getting_around.html">[ Nav ] &ndash;&gt; Scheduling / Cast Overtime</a> should be run prior to the running of the payroll, ensuring that no shift changes are done once the cast overtime is run and the payroll processed.</p>
+<p class="TutParagraph">If a shift has had the cast overtime process run against it, and then you make any changes to the shift, the system will recost the shift and remove the overtime casting.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0"></table>
+              <p class="w2SubTitleColor">&nbsp;</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph"><img src="../image/bullet-s.gif"><a href="tut_0003.html">Correcting the pay</a></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

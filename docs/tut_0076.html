@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Powerforce Support</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+		<link href="/includes/css/style.css" rel="stylesheet" type="text/css" media="screen">
+
+<script>
+$(document).ready(function() {
+	$(".softwarenav_toggle").click(function() {
+		$("#subnav").slideToggle();
+	});
+});
+</script>
+
+<link rel="icon" href="/includes/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/includes/favicon.ico" type="image/x-icon" />
+	</head>
+	<body>
+		<div id="header_wrap">
+			<div id="header">
+				<div id="logo"> </div>
+				<div id="navcontact">
+						<div id="contact_info">
+						</div>
+				</div>
+				<div class="clear"></div>
+			<div id="subnav">
+				<ul>
+					<li><a href="/"><img src="/img/house_icon.png" align="absmiddle">Support Home</a></li>
+				</ul>
+				<div id="navsearch">
+					<form name="navsearch_form" action="/includes/search.php" method="get">
+						<label for="search">Search</label><input type="text" name="search" id="search"><input type="submit" id="search_go" value="">
+					</form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>
+        <div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+			  <div id="wide_col">
+				<h1>Cannot allocate leave to employee</h1>
+				  <p>Employee  Number 0130 Moe Quince - he is a part time employee with us and has  always been part time but we can now no longer allocate leave to him and when  we try it says he is casual. As you can see he is set up as part time.</p>
+<p>&nbsp;</p>
+              </div>
+				<div id="narrow_col" class="right_col">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					
+                    <a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+				</div>
+				<div class="clear"></div>
+<!-- "../includes/doc_footer.html" --></div>
+		</div>
+		<div id="content_wrap">
+			<div id="content">
+<!-- "../includes/doc_head.html" -->
+
+				<div id="page_col">
+				  <h1><br>
+			      </h1>
+				  <hr>
+                  <h1>Introduction</h1>
+                  <ul>
+                    <li>To start the investigation confirm the employment type and pay class of the employee in question. <br>
+                      Then confirm that the pay class (classification code) accrues leave - (as per the image below)
+                      <br>
+                      This quick check confirms that the employee's pay class does have a means to calculate out leave.</li>
+                  </ul>
+                  <p> <br>
+                    <img src="/2014/helpdesk/img/hd_76a.png" width="409" height="415">                  <img src="/2014/helpdesk/img/hd_76b.png" width="488" height="181"></p>
+                  <ul>
+                    <li>The next step is to confirm what is being said is the actual issue - the inability to schedule leave.<br>
+                      The quickest path to this is to open an existing shift for the employee
+                    </li>
+                  </ul>
+                  <p><img src="/2014/helpdesk/img/hd_76c.png" width="547" height="284"></p>
+                  <ul>
+                    <li>Double click on the shift to 'Edit the booking'<br>
+                      Then, change the scheduling code to 'Annual Leave&quot; to see what the system is doing</li>
+                  </ul>
+                  <p>&nbsp;</p>
+                  <ul>
+                    <li>The message is clear on what the issue is, however, due to the closeness of the pay class ids, the error is not agains the employees' base pay class, rather it's against CA-L2 CAS.<br>
+                      That can only be as a result of this site, having a classification change, so let's check that</li>
+                  </ul>
+                  <p><img src="/2014/helpdesk/img/hd_76d.png" width="663" height="475"></p>
+                  <p>Open the 'client operations' for this site and indeed verify that all Grade 1 Casual (FTE) are to be paid at &quot;CA-L2 CAS&quot;.</p>
+                  <p><img src="/2014/helpdesk/img/hd_76e.png" width="677" height="148"></p>
+                  <p>Finally, let's open the CA-L2 CAS Entitlements details</p>
+                  <p>To which we see that pay class CA-L2 CAS has not leave entitlements - and hence the reason this employee cannot be allocated leave (to this site).</p>
+                  <p><img src="/2014/helpdesk/img/hd_76f.png" width="609" height="326"></p>
+                  <hr>
+                  <h1>Additional Information</h1>
+                  <p>You now have two approaches to correct this</p>
+                  <ol>
+                    <li>Enter leave entitlement details for the pay class - which will allow you to have specific leave accruals for leave attributable to / at this site.</li>
+                    <li>Create a rostering site called &quot;Leave&quot; and roster the employee to that  - to which the pay class will always default at the employee's base pay class.</li>
+                  </ol>
+                  <p>&nbsp;</p>
+                  <p>The choice of which option works best is based on the broader definition of the actual award that the employee is covered by.</p>
+				</div>
+			</div>
+		</div>
+	<div id="footer_wrap">
+    <hr>
+<p><span class="style7" style="margin-bottom:2pt;">Article updated by PowerForce Software  on Tuesday, Dec 09, 2014.</span></p>
+			<div id="footer">
+			  <div id="footer_nav">
+					<ul>
+						<li><a href="#">News</a></li>
+						<li><a href="/">Support</a></li>
+						<li><a href="#">Demo</a></li>
+					</ul>
+				</div>
+				<div id="footer_contact">
+<!-- "/includes/doc_footer.html" -->
+				</div>
+				<div id="footer_logo">
+				</div>
+				<div class="clear"></div>
+				<div id="footer_copyright">
+					&copy; 2015, All Rights Reserved, Envizion Systems Pty. Ltd.
+				</div>
+			</div>
+		</div>     
+</body>
+</html>
+</html>
+

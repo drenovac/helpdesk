@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				<h1>Overview</h1>
+				  <p>Your Powerforce environment is made up of various support programs giving Powerforce the functionality that you utilise daily.</p>
+				  <p>You are likely at this article as a result of a system error message, indicating that your workstation is missing a particular configuration file <strong>(.ocx file registration)</strong>.</p>
+				  <p>If you need to understand how to flick yourself into adminstrative mode, read <a href="../2013/support/faq5.html#run_as_admin">this article.</a></p>
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2013/helpdesk/index.html">Helpdesk Index</a>
+                    <a href="index.html">pre-2013 technotes</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+				
+                <p>Powerforce is made up of many pieces of supporting software, and one of the newer components are the SRP ActiveX Controls. We are using these additional tools to provide new functionality into Powerforce. An example is <a href="../nvzn9/nv_report.html">the new report writer</a>.</p>
+                <hr>
+                <h2>Installing the required files (SRPControls.ocx)</h2>
+                <p>&nbsp;</p>
+                <p>Your <a href="../admin/pf_shortcut.html">Powerforce home directory</a> should already contain a file named "SRPControls.ocx). <br>
+                <br>
+                You can place these files anywhere you wish, but the wisest location would be your application folder. As an alternative, you can place them in the Windows System32 folder, if you want them located in a place that's accessible by any user. The choice is yours.</p>
+                <p>In order for your application to utilize the OCX files during runtime, Windows needs to know where to find the OCX files. This is done throught registration. When you register an OCX file, entries are placed in the registry detailing the OCX file's location, the types of controls within the OCX, and more. This information allows your application, as well as any other applications, to quickly gain access to the SRP OLE Controls.</p>
+                <p>To register an OCX file, simply <strong>run the following command from a DOS prompt or from the Run window</strong>:</p>
+                <pre><strong>regsvr32 &lt;ocxfile&gt;</strong>  </pre>
+                <p><br>
+                The regsvr32 command is built into Windows. It's sole purpose is to register and unregister self-registering DLLs. OCX files are considered self-registering DLLs, even though their extensions are different. Here's an example on how to register the SRP Core Controls form an OpenInsight directory:</p>
+                <pre> regsvr32 C:\Revsoft\Oinsight\SRPCore.ocx &nbsp;   (where C:\Revsoft\Oinsight is the "Starts in" directory of your Powerforce)</pre>
+                <p><br>
+                If you have more than one OCX file, you must call regsvr32 for each one.</p>
+                <h3><span id="The_Shared_DLL">The Shared DLL</span></h3>
+                <p>&nbsp;</p>
+                <p>Along with your OCX files, there is one DLL file called SRPShared.dll. This DLL file contains the program logic that is common, or shared, between all OCX files. This helps reduce the overall size of all the SRP OLE Controls by eliminate redundant code. This also has the advantage of modularizing future updates.</p>
+                <p>In order for the OCX files to register, unregister, and execute, they must be able to see the DLL file. With OCX files, Windows used the registry. But the SRPShared.dll is not a self registering file. So, Windows must use a different technique to find it. Windows finds DLLs by looking in the following locations in the following top-down order:</p>
+                <ul>
+                <li>The directory from which the application loaded</li>
+                <li>The current directory</li>
+                <li>The Windows System32 directory</li>
+                <li>The Windows System directory</li>
+                <li>The Windows directory</li>
+                <li>The directories that are listed in the PATH environment variable</li>
+                </ul>
+                <p>&nbsp;</p>
+                <p>So when it comes to installing the SRP OLE Controls, your safest bet is to place all the OCX files and the DLL file into either the application folder or the System32 directory. If you place them anywhere else, then you need to add that path to your machine's PATH environment variable.</p>
+                <p><em><strong>The same goes for running regsvr32. If you try to run regsvr32 from a directory other than the one containing your OCX and DLL files, then it will return with an error.</strong></em></p>
+                <h3><span id="Updating">Updating</span></h3>
+                <p>&nbsp;</p>
+                <p>We update our controls on a frequent basis to ensure you always have the most complete and robust controls available. To update your OCX files, simply replace them with the new OCX files. Then, register the new OCX files as if they were newly installed. In many cases, failing to re-register the new OCX files may not cause you any harm. But if the new OCX file has new properties, methods, or events, you may find that those new elements are inaccessible. To be safe, always register new OCX files. You do not need to un-register old OCX files before registering the new ones.</p>
+                <h3><span id="Uninstalling">Uninstalling</span></h3>
+                <p>&nbsp;</p>
+                <p>To uninstall the SRP OLE Controls, you first need to unregister each OCX file. You can use the regsvr32 command. The syntax for unregistering your files is:</p>
+                <pre>regsvr32 -u &lt;ocxfile&gt;</pre>
+                <p>&nbsp;</p>
+                <p> You can find specific product information at the product's web site (<a href="http://www.srpcs.com/">here</a>).</p>
+                <hr>
+                
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

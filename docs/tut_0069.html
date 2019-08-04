@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head><title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<div class="container-fluid topbar">
+	<div class="row">
+        <div class="col-sm-10 col-sm-offset-1" style="background-color:#FFF;"><img src="/images/pforce_logo.gif" /></div>
+    </div>
+    <div class="row header_wrap">
+        <div class="col-sm-5 hidden-xs col-sm-offset-1"><a href="/"><span class="glyphicon glyphicon-home"></span> Support Home</a></div>
+        <div class="col-sm-5" >
+        		<div id="navsearch">
+					<form method="get" action="/includes/search.php" name="navsearch_form" id="navsearch_form">
+						<label for="search">Search</label><input type="text" id="search" name="search"> <span class="glyphicon glyphicon-search" style="cursor:pointer;" onClick="javascript:document.getElementById('navsearch_form').submit();"></span>
+					</form>
+				</div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row rowfirst1">
+    	<div class="col-sm-7 col-sm-offset-1">
+				
+				
+				<h1>PTA Award Setup</h1>
+			    <p>We have to add VOT (voluntary overtime) to our classifications for  PTA,  &amp; require assistance to configure it.</p>
+			  
+				  <ul>
+				    <li><br>
+				      We thought we got it correct, with the afternoon shift  paying and the night shift paying, </li>
+				    <li>but when the shift starts in the morning, it  is paying the afternoon hours as day hours, and only kicking in night shift at  6pm.<br>
+				      Afternoon shift should kick in at midday.</li>
+				    <li>Can someone please look at our test database,  classification WAPTTWU5</li>
+				    <li></li>
+				    <li>In the award interpreter, we have allocated line 6 to  pay for day shift (Day0), </li>
+				    <li>and line 7 for afternoon shift (Day1) </li>
+				    <li>and line 8 for  night shift (Day2).<br>
+				    </li></ul>
+				    <p>&nbsp;</p>
+				    <p>This works correctly if the shift is  afternoon/night, but not for day/afternoon. </p>
+			      <p>The shift pays correctly as Normal, so the timezones  are correct. Its just the VOT that isn’t paying the afternoon correctly.<br>
+                  Is there a screen that details the timezones for VOT?</p>
+                  <p>.</p>
+				
+              
+        </div>
+        <div class="col-sm-3">
+					<div class="grey_box">
+					<h1>See Also</h1>
+					<a href="../2014/helpdesk/index.html">Technote index</a>
+					</div>
+		</div>
+	</div>
+    <div class="row rowlast1">
+    	<div class="col-sm-10 col-sm-offset-1">
+			<div id="page_col">
+					
+				
+					<h1>The VOT</h1>
+				  <p>To correctly understand how VOT is implemented, please refer to this earlier article "<a href="../2013/pay/pf_ai_voluntray_overtime.html">Voluntary Overtime Award Configuration</a>".</p>
+				  <p>The implemenation of VOT works on the premise of paying the shift hours on the basis of the OT1, OT2 and OT3 time spans. These time spans, whilst configurable in the award interpreter (for duration) &amp; classification codes window for pay_class - are based on hours of the day, not time-zoned hours of the day.</p>
+				  <p>By 'time-zoned' hours, we mean Afternoon, Night, etc.<br>
+				    It means the first 'n' hours of the shift, the next 'p' hours of the shift and then generally the balance.
+				  </p>
+				  <p>Looking at the screen shot below:</p>
+				  <p>The configuration is saying:</p>
+				  <ul>
+				    <li>On the Monday, take the first 2 hours of the shift &amp; pay at what ever code is in row 6 of the pay_classification, then take the next 3 hours and pay those housr according to whatever code is in row 7, etc...</li>
+				    <li>There is no consideration given for time of day - only hours of the shift.</li>
+			      </ul>
+				  <p>&nbsp;</p>
+				  <p><img src="../2014/helpdesk/img/hd_70c.png" height="502" width="786"></p>
+				  <ul>
+				    <li>Therefore to achieve what you require, you must select to pay the employee at a different pay_class.<br>
+				      That payclass has to be configured so that it mimics the normal class to which you are creating the OVT rule. This allows you to select the exact pay_codes you wish to use for the VOT hours.
+			        </li>
+			      </ul><br>
+                  <h1>Scheduling Workbench</h1>
+                  <p>Then to engage that particular pay class, you change the "Classification Code" of the shift to the newly create pay classification.</p>
+                  <p><img src="../2014/helpdesk/img/hd_69a.png" height="265" width="617"></p>
+                    <p>&nbsp;</p>
+                     <h2>Further Comments</h2>
+	          
+			  
+			</div>
+		</div>	
+	</div>
+     <div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>

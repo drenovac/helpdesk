@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="description" content="PowerForce application online documentation and tutorials Click on the desired topic below to access the tutorial.">
+
+
+<title>PowerForce - Rostering, Payroll, Invoicing, Award interpretation</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/default.css">
+<script src="/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/image.js"></script>
+</head>
+
+<body>
+<a name="topofpage"></a>
+<div class="container-fluid topbar">
+    <div class="row header">
+        <div class="col-sm-11">
+            <div>
+            <a href="/includes/search.php?search=">search</a> | 
+            <a href="http://www.powerforcesoftware.com/">Company</a> | 
+            <a href="http://www.roster-me.com/">Help Desk</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+	<div class="row rowfirst rowlast">
+    	<div class="col-sm-10 col-sm-offset-1">
+    <table cellpadding="0" cellspacing="0" width="100%" border="0">
+      <tr>
+        <td valign="top" align="center"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="6">
+  <tr>
+<td valign="top"><p class="sLocator"><a href="../index-2.html" class="sLocator">Home</a><a href="http://www.powerforcesoftware.com/"><img src="../image/pforce.gif" width="267" height="24" align="right"></a></p>
+<p class="w2SubTitleColor">Tutorial<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Introduction</p>
+<p class="TutParagraph">We have four guards rostered on the following site and  the system is paying different amounts.</p>
+<p class="TutParagraph">None of them should be getting Marquee rates.</p>
+<p class="TutParagraph">Can you please confirm why and also explain how we are  to rectify this.               </p>
+</td>
+<td width="50%" valign="top"><p class="w2SubTitle2Blue">Getting There:</p>
+<p align="center" class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Modules / Module Options</a></p>
+</td>
+</tr>
+</table>
+<p class="w2SubTitleColor">Issue <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">We have four guards rostered on the following site and  the system is paying different amounts.</p>
+<p class="TutParagraph">None of them should be getting Marquee rates.</p>
+<p class="TutParagraph">Can you please confirm why and also explain how we are  to rectify this.</p>
+<blockquote>
+                  <p class="TutParagraph"><strong>SITE: V-183 SUNDOWNER HOUSE</strong></p>
+<p class="TutParagraph">EMPLOYEE: V-213 KEITH <br>
+                    CLASSIFICATION: VIC FULLTIME LEVEL 4 <br>
+                    ALLOWANCES PAID: UNIFORM ALLOWANCE &amp; NIGHT SHIFT  ALLOWANCE<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p class="TutParagraph">EMPLOYEE: V-406 ASHLEY<br>
+                    CLASSIFICATION: VIC CASUAL LEVEL 1<br>
+                    CLASSIFICATION FOR THE SHIFT: MARQUEE <br>
+                    ALLOWANCES PAID: NIL</p>
+<p class="TutParagraph">EMPLOYEE: V-325 CHRIS <br>
+                    CLASSIFICATION: VIC CASUAL AWARD LEVEL 2<br>
+                    CLASSIFICATION FOR THE SHIFT: MARQUEE <br>
+                    ALLOWANCES PAID: NIL</p>
+<p class="TutParagraph">EMPLOYEE: V-247&nbsp;&nbsp;&nbsp; DAMIAN <br>
+                    CLASSIFICATION: VIC FULLTIME LEVEL 4 ROTATE<br>
+                    CLASSIFICATION FOR THE SHIFT: MARQUEE <br>
+                    ALLOWANCES PAID: NIL</p>
+</blockquote>
+                <p class="TutParagraph">Can you please explain why the system picks up a  different rate once a person is entered in for a shift.           </p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 1<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">From the description of the problem, the first thing that you want to check is that there is an override rate on the Client (rostering location).</p>
+<p class="TutParagraph">To check this, use the Client Operations screen to verify. <a href="../general/pf_getting_around.html">[ Nav ] &ndash;&gt; Clientelle / Client Operations</a></p>
+<p class="TutParagraph">Open the Client Operations screen, and on the Rates tab, check for Site specific rates.</p>
+<p>&nbsp;</p>
+<p><img src="images/hd00001a.png" style="width:100%; max-width:575px;" alt="client operations"></p>
+<p class="TutParagraph">The items to note are the Permanent &amp; Casual Classification definition - this is saying that you may have a different entry for Permanent vs Casual staff. The details above indicate that any employee whose Grade Definition in their Classification Code of 1, are to be paid according to the Classification Code :Marquee.
+</p>
+<p class="TutParagraph">This is the mechanism by which an employee working at this site will be paid the specific rate as defined in this Client Operations screen.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Step 2 <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">For each of your employees, check the Grade definition from their classification codes:</p>
+<ul>
+                                  <li> <a href="../general/pf_getting_around.html" class="TutParagraph">[ Nav ] &ndash;&gt; Biographical / Personnel Maintenance / Personnel Rates</a></li>
+                                  <li><span class="TutParagraph"> <a href="../general/pf_getting_around.html">[ SC ] &ndash;&gt; Payroll / Classification Codes</a></span></li>
+                           </ul>
+                                <p><img src="images/hd00001b.png" style="width:100%; max-width:475px;" alt="classification code"></p>
+<span class="TutParagraph">This is the entry which corresponds to the Grade field in the previous image on the Client operations rates tab.</span>
+                <p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">Explanation<img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutParagraph">Your first employee's classification has a Grade of 2, hence he is not being paid Marquee rates.</p>
+<p class="TutParagraph">Each of your other employees' classification codes Grade definition are 1, hence there is a link in the Client Operations entry to the grade in the classification and hence they are being paid at the Marquee rate.</p>
+<p><img src="images/hd00001c.png" style="width:100%; max-width:579px;" alt="code link"></p>
+<p class="TutParagraph">Grade 1 on the classification code, matches the grade 1 in the client rates, hence pay the other rate &quot;Marquee&quot;.</p>
+<p align="right"><a href="#topofpage">Top of Page</a></p>
+<p class="w2SubTitleColor">See Also  <img src="../image/hline000.gif" width="100%" height="5" vspace="5" border="0"></p>
+<p class="TutLink"><img src="../image/bullet-s.gif"><a href="../general/pf_windows.html">PowerForce Controls</a></p>
+</td>
+</tr>
+     </table></td>
+ </tr>
+</table>
+		</div>
+	</div> 
+</div>
+<div class="container-fluid bottombar">        
+	<div class="row footer">     
+		<div class="col-sm-4 hidden-xs col-sm-offset-1"><div id="footer_logo"></div></div>
+        <div class="col-sm-2">
+        	<div id="footer_nav">
+					<a href="#">News</a>&nbsp;&nbsp;&nbsp;
+					<a href="/">Support</a><br />					
+                    <span style="font-size:10px;">Updated Thursday October 02, 2014</span>
+			</div>
+        </div>
+		<div class="col-sm-4 copyright">
+        	<div class="footer_menu">
+             <a target="_blank" href="http://www.powerforcesoftware.com/pf/terms-of-use.html">Terms of Use</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/pf/privacy-policy.html">Privacy Policy</a> |
+            <a target="_blank" href="http://www.powerforcesoftware.com/about_us.html">Company</a>
+            </div>
+        	<div>&copy; 2007-present Envizion Systems Pty Ltd. All rights reserved. </div>
+        </div>
+	</div>
+</div>     
+</body>
+</html>
+</html>
